@@ -209,6 +209,22 @@
 				
 			            <li><a style="padding-left:16px;" href="naver.maps.UTMK_NAVER.html">naver.maps.UTMK_NAVER</a></li>
 				
+			            <li><a href="#" class="_cat" style="padding-left:10px" >Submodule: geocoder</a></li>
+				
+			            <li><a style="padding-left:16px;" href="naver.maps.TransCoord.html">naver.maps.TransCoord</a></li>
+				
+			            <li><a href="#" class="_cat _subcat" style="padding-left:10px" >&nbsp&nbspExtended Projection</a></li>
+				
+			            <li><a style="padding-left:22px;" href="naver.maps.EPSG3857Coord.html">naver.maps.EPSG3857Coord</a></li>
+				
+			            <li><a style="padding-left:22px;" href="naver.maps.TM128.html">naver.maps.TM128</a></li>
+				
+			            <li><a style="padding-left:22px;" href="naver.maps.TM128Coord.html">naver.maps.TM128Coord</a></li>
+				
+			            <li><a style="padding-left:22px;" href="naver.maps.UTMK_NAVERCoord.html">naver.maps.UTMK_NAVERCoord</a></li>
+				
+			            <li><a style="padding-left:22px;" href="naver.maps.UTMKCoord.html">naver.maps.UTMKCoord</a></li>
+				
 						
 					</ul>
 				</li>
@@ -225,7 +241,7 @@
 					<a href="modules.list.html" itemprop="mainEntityOfPage" class="dropdown-toggle dropdown-toggle-modules" data-toggle="dropdown">Modules<b class="caret"></b></a>
 					<ul class="dropdown-menu ">
 						
-						<li><a href="module-panorama.html">panorama</a></li>
+						<li><a href="module-geocoder.html">geocoder</a></li><li><a href="module-panorama.html">panorama</a></li>
 					</ul>
 				</li>
 				
@@ -306,6 +322,10 @@
 			            <li><a href="#" class="_cat" style="padding-left:10px" >파노라마</a></li>
 				
 			            <li><a style="padding-left:16px;" href="tutorial-Panorama.html">파노라마 생성 및 기본 동작</a></li>
+				
+			            <li><a href="#" class="_cat" style="padding-left:10px" >Geocoder</a></li>
+				
+			            <li><a style="padding-left:16px;" href="tutorial-Geocoder.html">Geocoder 를 활용한 좌표 변환</a></li>
 				
 						
 					</ul>
@@ -423,6 +443,8 @@
 				
 			            <li><a style="padding-left:22px;" href="tutorial-polyline-dynamic.example.html">클릭한 지점 폴리라인 연결하기</a></li>
 				
+			            <li><a style="padding-left:22px;" href="tutorial-shape-measures.example.html">폴리라인, 폴리곤의 거리/면적 재기</a></li>
+				
 			            <li><a href="tutorial-digest.example.html#지상 오버레이" class="_cat _subcat" style="padding-left:10px" >지상 오버레이</a></li>
 				
 			            <li><a style="padding-left:22px;" href="tutorial-ground-overlay.example.html">지상 오버레이 표시하기</a></li>
@@ -466,6 +488,12 @@
 			            <li><a style="padding-left:16px;" href="tutorial-7-panorama-aroundcontrol.example.html">거리/항공뷰 전환하기</a></li>
 				
 			            <li><a style="padding-left:16px;" href="tutorial-8-panorama-flightspot.example.html">지도에 항공뷰 아이콘 표시하기</a></li>
+				
+			            <li><a href="tutorial-digest.example.html#Geocoder" class="_cat" style="padding-left:10px" >Geocoder</a></li>
+				
+			            <li><a style="padding-left:16px;" href="tutorial-1-geocoder-transcoord.example.html">좌표계 변환하기</a></li>
+				
+			            <li><a style="padding-left:16px;" href="tutorial-2-geocoder-tm128coord.example.html">TM128 평면 좌표 투영 사용하기</a></li>
 				
 						
 					</ul>
@@ -725,13 +753,31 @@
             <dt><a href="naver.maps.EPSG3857.html">EPSG3857</a></dt>
             <dd></dd>
         
+            <dt><a href="naver.maps.EPSG3857Coord.html">EPSG3857Coord</a></dt>
+            <dd></dd>
+        
             <dt><a href="naver.maps.Event.html">Event</a></dt>
+            <dd></dd>
+        
+            <dt><a href="naver.maps.TM128.html">TM128</a></dt>
+            <dd></dd>
+        
+            <dt><a href="naver.maps.TM128Coord.html">TM128Coord</a></dt>
+            <dd></dd>
+        
+            <dt><a href="naver.maps.TransCoord.html">TransCoord</a></dt>
             <dd></dd>
         
             <dt><a href="naver.maps.UTMK.html">UTMK</a></dt>
             <dd></dd>
         
             <dt><a href="naver.maps.UTMK_NAVER.html">UTMK_NAVER</a></dt>
+            <dd></dd>
+        
+            <dt><a href="naver.maps.UTMK_NAVERCoord.html">UTMK_NAVERCoord</a></dt>
+            <dd></dd>
+        
+            <dt><a href="naver.maps.UTMKCoord.html">UTMKCoord</a></dt>
             <dd></dd>
         </dl>
     
@@ -2088,6 +2134,210 @@
     
 </dd>
 
+        
+            
+<hr>
+<dt class="name" id=".SymbolStyle">
+    <h4><span class="type-signature">&lt;static, readonly> </span>SymbolStyle</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p><code>SymbolStyle</code>객체는 <a href="naver.maps.Marker.html#~SymbolIcon">SymbolIcon</a>의 <code>style</code>을 사전에 정의한 것입니다.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="global.html#string">string</a></span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+    <h5 class="subsection-title">Properties</h5>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>CIRCLE</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="global.html#string">string</a> -->
+    <a href="global.html#string">string</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    circle
+                
+                </td>
+            
+
+            <td class="description last"><p>원 아이콘을 생성하며, <a href="naver.maps.Marker.html#~SymbolIcon">SymbolIcon</a>의 <code>radius</code> 속성을 필수로 지정해야 합니다.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>PATH</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="global.html#string">string</a> -->
+    <a href="global.html#string">string</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    path
+                
+                </td>
+            
+
+            <td class="description last"><p>폴리라인 아이콘을 생성하며, <a href="naver.maps.Marker.html#~SymbolIcon">SymbolIcon</a>의 <code>path</code> 속성을 필수로 지정해야 합니다.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>CLOSED_PATH</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="global.html#string">string</a> -->
+    <a href="global.html#string">string</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    closedPath
+                
+                </td>
+            
+
+            <td class="description last"><p>폴리곤 아이콘을 생성하며, <a href="naver.maps.Marker.html#~SymbolIcon">SymbolIcon</a>의 <code>path</code> 속성을 필수로 지정해야 합니다.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
         </dl>
     
 
@@ -3075,7 +3325,7 @@
                 </td>
             
 
-            <td class="description last"><p>지도의 초기 크기입니다. 이 값을 설정하지 않으면 지도 초기화 시 지도 엘리먼트의 크기로 설정합니다.</p></td>
+            <td class="description last"><p>지도의 초기 크기입니다. 이 값을 설정하지 않으면, 지도 DOM 요소의 css 크기에 따라 지도가 자동 리사이즈 됩니다.</p></td>
         </tr>
 
     
@@ -3381,7 +3631,7 @@
 	</span>
 
 <span class="jsdoc-message">
-	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a>
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a>
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
@@ -3450,48 +3700,13 @@ $( function () {
       var $this = $( this );
       $this.addClass('table');
     } );
-
+    $("#main>section:not('.tutorial-section')").localScroll({
+        offset: {
+            top: -170 //offset by the height of your header (give or take a few px, see what works for you)
+        }
+    });
 } );
 </script>
-
-
-
-<!--Navigation and Symbol Display-->
-
-<script>
-	$( function () {
-		$( '#main' ).localScroll( {
-			offset : { top : 60 } //offset by the height of your header (give or take a few px, see what works for you)
-		} );
-		$( "dt.name" ).each( function () {
-			var $this = $( this ).find("h4");
-			var icon = $( "<i/>" ).addClass( "icon-plus-sign" ).addClass( "pull-right" ).addClass( "icon-white" );
-			var dt = $(this);
-			var children = dt.next( "dd" );
-
-			dt.prepend( icon ).css( {cursor : "pointer"} );
-			dt.addClass( "member-collapsed member-open" ).addClass( "member" );
-
-			// children.hide();
-
-			// dt.children().on( "click", function () {
-			// 	children = dt.next( "dd" );
-			// 	children.slideToggle( "fast", function () {
-
-			// 		if ( children.is( ":visible" ) ) {
-			// 			icon.addClass( "icon-minus-sign" ).removeClass( "icon-plus-sign" ).removeClass( "icon-white" );
-			// 			dt.addClass( "member-open" ).animate( "member-collapsed" );
-			// 		} else {
-			// 			icon.addClass( "icon-plus-sign" ).removeClass( "icon-minus-sign" ).addClass( "icon-white" );
-			// 			dt.addClass( "member-collapsed" ).removeClass( "member-open" );
-			// 		}
-			// 	} );
-			// } );
-
-		} );
-	} );
-</script>
-
 
 <script type="text/javascript">
 	if (isSearchSupported) {

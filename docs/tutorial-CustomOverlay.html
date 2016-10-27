@@ -209,6 +209,22 @@
 				
 			            <li><a style="padding-left:16px;" href="naver.maps.UTMK_NAVER.html">naver.maps.UTMK_NAVER</a></li>
 				
+			            <li><a href="#" class="_cat" style="padding-left:10px" >Submodule: geocoder</a></li>
+				
+			            <li><a style="padding-left:16px;" href="naver.maps.TransCoord.html">naver.maps.TransCoord</a></li>
+				
+			            <li><a href="#" class="_cat _subcat" style="padding-left:10px" >&nbsp&nbspExtended Projection</a></li>
+				
+			            <li><a style="padding-left:22px;" href="naver.maps.EPSG3857Coord.html">naver.maps.EPSG3857Coord</a></li>
+				
+			            <li><a style="padding-left:22px;" href="naver.maps.TM128.html">naver.maps.TM128</a></li>
+				
+			            <li><a style="padding-left:22px;" href="naver.maps.TM128Coord.html">naver.maps.TM128Coord</a></li>
+				
+			            <li><a style="padding-left:22px;" href="naver.maps.UTMK_NAVERCoord.html">naver.maps.UTMK_NAVERCoord</a></li>
+				
+			            <li><a style="padding-left:22px;" href="naver.maps.UTMKCoord.html">naver.maps.UTMKCoord</a></li>
+				
 						
 					</ul>
 				</li>
@@ -225,7 +241,7 @@
 					<a href="modules.list.html" itemprop="mainEntityOfPage" class="dropdown-toggle dropdown-toggle-modules" data-toggle="dropdown">Modules<b class="caret"></b></a>
 					<ul class="dropdown-menu ">
 						
-						<li><a href="module-panorama.html">panorama</a></li>
+						<li><a href="module-geocoder.html">geocoder</a></li><li><a href="module-panorama.html">panorama</a></li>
 					</ul>
 				</li>
 				
@@ -306,6 +322,10 @@
 			            <li><a href="#" class="_cat" style="padding-left:10px" >파노라마</a></li>
 				
 			            <li><a style="padding-left:16px;" href="tutorial-Panorama.html">파노라마 생성 및 기본 동작</a></li>
+				
+			            <li><a href="#" class="_cat" style="padding-left:10px" >Geocoder</a></li>
+				
+			            <li><a style="padding-left:16px;" href="tutorial-Geocoder.html">Geocoder 를 활용한 좌표 변환</a></li>
 				
 						
 					</ul>
@@ -423,6 +443,8 @@
 				
 			            <li><a style="padding-left:22px;" href="tutorial-polyline-dynamic.example.html">클릭한 지점 폴리라인 연결하기</a></li>
 				
+			            <li><a style="padding-left:22px;" href="tutorial-shape-measures.example.html">폴리라인, 폴리곤의 거리/면적 재기</a></li>
+				
 			            <li><a href="tutorial-digest.example.html#지상 오버레이" class="_cat _subcat" style="padding-left:10px" >지상 오버레이</a></li>
 				
 			            <li><a style="padding-left:22px;" href="tutorial-ground-overlay.example.html">지상 오버레이 표시하기</a></li>
@@ -466,6 +488,12 @@
 			            <li><a style="padding-left:16px;" href="tutorial-7-panorama-aroundcontrol.example.html">거리/항공뷰 전환하기</a></li>
 				
 			            <li><a style="padding-left:16px;" href="tutorial-8-panorama-flightspot.example.html">지도에 항공뷰 아이콘 표시하기</a></li>
+				
+			            <li><a href="tutorial-digest.example.html#Geocoder" class="_cat" style="padding-left:10px" >Geocoder</a></li>
+				
+			            <li><a style="padding-left:16px;" href="tutorial-1-geocoder-transcoord.example.html">좌표계 변환하기</a></li>
+				
+			            <li><a style="padding-left:16px;" href="tutorial-2-geocoder-tm128coord.example.html">TM128 평면 좌표 투영 사용하기</a></li>
 				
 						
 					</ul>
@@ -543,14 +571,17 @@
     <h1>사용자 정의 오버레이</h1>
 
     <p>NAVER 지도 API v3는 사용자 정의 오버레이를 생성할 수 있도록 <a href="naver.maps.OverlayView.html">OverlayView</a> 클래스를 제공합니다. 이 클래스는 오버레이를 생성할 때 구현해야 하는 메서드와 유용한 메서드를 제공합니다.</p>
-<p>다음은 구현해야 할 메서드입니다.</p>
+<p>다음은 사용자 정의 오버레이에 꼭 구현해야 하는 메서드입니다.</p>
 <ul>
-<li><code>onAdd</code> 메서드는 지도에 오버레이가 추가될 때 호출되는 것으로 구현해야 합니다.</li>
-<li><code>draw</code> 메서드는 지도에 오버레이를 그려야 할 때 호출되는 것으로 구현해야 합니다.</li>
-<li><code>onRemove</code> 메서드는 지도에 오버레이가 삭제될 때 호출되는 것으로 구현해야 합니다.</li>
+<li><code>onAdd</code> 메서드는 지도에 오버레이를 추가할 때 호출되는 내용으로 구현해야 합니다.</li>
+<li><code>draw</code> 메서드는 지도에 오버레이를 그려야 할 때 호출되는 내용으로 구현해야 합니다.</li>
+<li><code>onRemove</code> 메서드는 지도에 오버레이가 삭제될 때 호출되는 내용으로 구현해야 합니다.</li>
 </ul>
 <h2>사용자 정의 오버레이 추가</h2><h3>사용자 정의 오버레이 생성</h3><p>다음 예제는 <a href="naver.maps.OverlayView.html">OverlayView</a>를 상속 받는 간단한 DOM 엘리먼트 오버레이를 생성합니다.</p>
-<pre class="prettyprint source lang-js"><code>var CustomOverlay = function(options) {
+<pre class="prettyprint source lang-js"><code>/**
+ * 사용자 정의 오버레이 구현하기
+ */
+var CustomOverlay = function(options) {
     this._element = $('&lt;div style=&quot;position:absolute;left:0;top:0;width:120px;height:30px;line-height:30px;text-align:center;background-color:#fff;border:2px solid #f00;&quot;>커스텀오버레이&lt;/div>')
 
     this.setPosition(options.position);
@@ -562,6 +593,35 @@ CustomOverlay.prototype = new naver.maps.OverlayView();
 
 CustomOverlay.prototype.constructor = CustomOverlay;
 
+CustomOverlay.prototype.onAdd = function() {
+    var overlayLayer = this.getPanes().overlayLayer;
+
+    this._element.appendTo(overlayLayer);
+};
+
+CustomOverlay.prototype.draw = function() {
+    // 지도 객체가 설정되지 않았으면 draw 기능을 하지 않습니다.
+    if (!this.getMap()) {
+        return;
+    }
+
+    // projection 객체를 통해 LatLng좌표를 화면좌표로 변경합니다.
+    var projection = this.getProjection(),
+        position = this.getPosition();
+
+    var pixelPosition = projection.fromCoordToOffset(position);
+
+    this._element.css('left', pixelPosition.x);
+    this._element.css('top', pixelPosition.y);
+};
+
+CustomOverlay.prototype.onRemove = function() {
+    this._element.remove();
+
+    // 이벤트 핸들러를 설정했다면 정리합니다.
+    this._element.off();
+};
+
 CustomOverlay.prototype.setPosition = function(position) {
     this._position = position;
     this.draw();
@@ -571,29 +631,30 @@ CustomOverlay.prototype.getPosition = function() {
     return this._position;
 };
 
+/**
+ * 사용자 정의 오버레이 사용하기
+ */
+var center = new naver.maps.LatLng(37.358202009037356, 127.10801839828491);
 var map = new naver.maps.Map(&quot;map&quot;, {
-    center: new naver.maps.LatLng(37.358202009037356, 127.10801839828491),
+    center: center,
     zoom: 12
-});
-
-naver.maps.Event.addListener(map, 'click', function(e) {
-    var overlay = new CustomOverlay({
-        position: e.latlng
-    });
-
-    overlay.setMap(map);
 });
 
 // 오버레이를 생성
 var overlay = new CustomOverlay({
-    position: new naver.maps.LatLng(37.358202009037356, 127.10801839828491)
-});</code></pre><blockquote>
+    position: center,
+    map: map
+});
+
+// 오버레이를 삭제 
+// overlay.setMap(null);</code></pre><blockquote>
 <p>위 예제는 jQuery 구문을 포함하고 있습니다.</p>
 </blockquote>
 <p><a href="tutorial-custom-overlay.example.html">사용자 정의 오버레이 표시하기</a></p>
 <h3>사용자 정의 오버레이 초기화</h3><p>사용자 정의 오버레이 객체를 생성하면 지도에 연결해야 합니다. NAVER 지도 API는 <code>setMap(map)</code> 메서드 호출 시(또는 옵션의 <code>map</code> 속성을 설정 시) <code>onAdd</code> 메서드를 호출해 오버레이가 지도에 추가되었음을 알립니다. 따라서, 지도 폐인(pane) 엘리먼트 중 적합한 엘리먼트에 오버레이 엘리먼트를 추가하는 기능을 이 메서드에 구현합니다.</p>
 <pre class="prettyprint source lang-js"><code>CustomOverlay.prototype.onAdd = function() {
     var overlayLayer = this.getPanes().overlayLayer;
+
     this._element.appendTo(overlayLayer);
 };</code></pre><blockquote>
 <p>위 예제는 jQuery 구문을 포함하고 있습니다.</p>
@@ -620,7 +681,6 @@ var overlay = new CustomOverlay({
 <p><code>getProjection</code> 메서드는 지도 좌표와 화면 좌표를 서로 변환할 수 있는 메서드를 제공하는 <a href="naver.maps.MapSystemProjection.html">MapSystemProjection</a> 객체를 반환합니다. 이를 이용해 오버레이의 지도 좌표를 화면 좌표로 변환하고, 적절한 위치에 오버레이를 배치합니다.</p>
 <h2>사용자 정의 오버레이 제거</h2><p>NAVER 지도 API v3는 <code>setMap(null)</code> 메서드 호출 시(또는 옵션의 <code>map</code> 속성을 <code>null</code>로 설정 시) <code>onRemove</code> 메서드를 호출해 오버레이가 지도에서 제거되었음을 알립니다. 따라서, 오버레이 엘리먼트를 지도 폐인(pane) 엘리먼트에서 제거하는 기능을 이 메서드에 구현합니다.</p>
 <pre class="prettyprint source lang-js"><code>CustomOverlay.prototype.onRemove = function() {
-    var overlayLayer = this.getPanes().overlayLayer;
     this._element.remove();
 
     // 이벤트 핸들러를 설정했다면 정리합니다.
@@ -667,7 +727,7 @@ var overlay = new CustomOverlay({
 	</span>
 
 <span class="jsdoc-message">
-	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a>
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a>
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
@@ -736,48 +796,13 @@ $( function () {
       var $this = $( this );
       $this.addClass('table');
     } );
-
+    $("#main>section:not('.tutorial-section')").localScroll({
+        offset: {
+            top: -170 //offset by the height of your header (give or take a few px, see what works for you)
+        }
+    });
 } );
 </script>
-
-
-
-<!--Navigation and Symbol Display-->
-
-<script>
-	$( function () {
-		$( '#main' ).localScroll( {
-			offset : { top : 60 } //offset by the height of your header (give or take a few px, see what works for you)
-		} );
-		$( "dt.name" ).each( function () {
-			var $this = $( this ).find("h4");
-			var icon = $( "<i/>" ).addClass( "icon-plus-sign" ).addClass( "pull-right" ).addClass( "icon-white" );
-			var dt = $(this);
-			var children = dt.next( "dd" );
-
-			dt.prepend( icon ).css( {cursor : "pointer"} );
-			dt.addClass( "member-collapsed member-open" ).addClass( "member" );
-
-			// children.hide();
-
-			// dt.children().on( "click", function () {
-			// 	children = dt.next( "dd" );
-			// 	children.slideToggle( "fast", function () {
-
-			// 		if ( children.is( ":visible" ) ) {
-			// 			icon.addClass( "icon-minus-sign" ).removeClass( "icon-plus-sign" ).removeClass( "icon-white" );
-			// 			dt.addClass( "member-open" ).animate( "member-collapsed" );
-			// 		} else {
-			// 			icon.addClass( "icon-plus-sign" ).removeClass( "icon-minus-sign" ).addClass( "icon-white" );
-			// 			dt.addClass( "member-collapsed" ).removeClass( "member-open" );
-			// 		}
-			// 	} );
-			// } );
-
-		} );
-	} );
-</script>
-
 
 <script type="text/javascript">
 	if (isSearchSupported) {

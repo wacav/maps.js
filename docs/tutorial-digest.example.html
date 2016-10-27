@@ -209,6 +209,22 @@
 				
 			            <li><a style="padding-left:16px;" href="naver.maps.UTMK_NAVER.html">naver.maps.UTMK_NAVER</a></li>
 				
+			            <li><a href="#" class="_cat" style="padding-left:10px" >Submodule: geocoder</a></li>
+				
+			            <li><a style="padding-left:16px;" href="naver.maps.TransCoord.html">naver.maps.TransCoord</a></li>
+				
+			            <li><a href="#" class="_cat _subcat" style="padding-left:10px" >&nbsp&nbspExtended Projection</a></li>
+				
+			            <li><a style="padding-left:22px;" href="naver.maps.EPSG3857Coord.html">naver.maps.EPSG3857Coord</a></li>
+				
+			            <li><a style="padding-left:22px;" href="naver.maps.TM128.html">naver.maps.TM128</a></li>
+				
+			            <li><a style="padding-left:22px;" href="naver.maps.TM128Coord.html">naver.maps.TM128Coord</a></li>
+				
+			            <li><a style="padding-left:22px;" href="naver.maps.UTMK_NAVERCoord.html">naver.maps.UTMK_NAVERCoord</a></li>
+				
+			            <li><a style="padding-left:22px;" href="naver.maps.UTMKCoord.html">naver.maps.UTMKCoord</a></li>
+				
 						
 					</ul>
 				</li>
@@ -225,7 +241,7 @@
 					<a href="modules.list.html" itemprop="mainEntityOfPage" class="dropdown-toggle dropdown-toggle-modules" data-toggle="dropdown">Modules<b class="caret"></b></a>
 					<ul class="dropdown-menu ">
 						
-						<li><a href="module-panorama.html">panorama</a></li>
+						<li><a href="module-geocoder.html">geocoder</a></li><li><a href="module-panorama.html">panorama</a></li>
 					</ul>
 				</li>
 				
@@ -306,6 +322,10 @@
 			            <li><a href="#" class="_cat" style="padding-left:10px" >파노라마</a></li>
 				
 			            <li><a style="padding-left:16px;" href="tutorial-Panorama.html">파노라마 생성 및 기본 동작</a></li>
+				
+			            <li><a href="#" class="_cat" style="padding-left:10px" >Geocoder</a></li>
+				
+			            <li><a style="padding-left:16px;" href="tutorial-Geocoder.html">Geocoder 를 활용한 좌표 변환</a></li>
 				
 						
 					</ul>
@@ -423,6 +443,8 @@
 				
 			            <li><a style="padding-left:22px;" href="tutorial-polyline-dynamic.example.html">클릭한 지점 폴리라인 연결하기</a></li>
 				
+			            <li><a style="padding-left:22px;" href="tutorial-shape-measures.example.html">폴리라인, 폴리곤의 거리/면적 재기</a></li>
+				
 			            <li><a href="tutorial-digest.example.html#지상 오버레이" class="_cat _subcat" style="padding-left:10px" >지상 오버레이</a></li>
 				
 			            <li><a style="padding-left:22px;" href="tutorial-ground-overlay.example.html">지상 오버레이 표시하기</a></li>
@@ -466,6 +488,12 @@
 			            <li><a style="padding-left:16px;" href="tutorial-7-panorama-aroundcontrol.example.html">거리/항공뷰 전환하기</a></li>
 				
 			            <li><a style="padding-left:16px;" href="tutorial-8-panorama-flightspot.example.html">지도에 항공뷰 아이콘 표시하기</a></li>
+				
+			            <li><a href="tutorial-digest.example.html#Geocoder" class="_cat" style="padding-left:10px" >Geocoder</a></li>
+				
+			            <li><a style="padding-left:16px;" href="tutorial-1-geocoder-transcoord.example.html">좌표계 변환하기</a></li>
+				
+			            <li><a style="padding-left:16px;" href="tutorial-2-geocoder-tm128coord.example.html">TM128 평면 좌표 투영 사용하기</a></li>
 				
 						
 					</ul>
@@ -531,7 +559,7 @@
 			</div>
 			<script src="./js/jquery-1.9.1.js"></script>
 <script type="text/javascript" src="./js/base.js"></script>
-<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=MK_1sBFRuO6XEvDi29iW&amp;submodules=panorama"></script>
+<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=MK_1sBFRuO6XEvDi29iW&amp;submodules=panorama,geocoder"></script>
 <link rel="stylesheet" type="text/css" href="./css/base.css" />
 <link rel='stylesheet' type='text/css' href='./css/digest.css' />
 
@@ -555,7 +583,7 @@
     </div>
     <div class="_digest">
         
-        <h1><a id="지도" href="#지도">#지도</a></h1>
+        <h1><a class="_unclickable" id="지도" href="#지도">#지도</a></h1>
 
 
 
@@ -609,7 +637,7 @@
             </div>
 
 
-        <h1><a id="지도 유형" href="#지도 유형">#지도 유형</a></h1>
+        <h1><a class="_unclickable" id="지도 유형" href="#지도 유형">#지도 유형</a></h1>
 
 
 
@@ -670,7 +698,7 @@
             </div>
 
 
-        <h1><a id="이벤트" href="#이벤트">#이벤트</a></h1>
+        <h1><a class="_unclickable" id="이벤트" href="#이벤트">#이벤트</a></h1>
 
 
 
@@ -696,7 +724,7 @@
             </div>
 
 
-        <h1><a id="데이터 레이어" href="#데이터 레이어">#데이터 레이어</a></h1>
+        <h1><a class="_unclickable" id="데이터 레이어" href="#데이터 레이어">#데이터 레이어</a></h1>
 
 
 
@@ -715,7 +743,7 @@
             </div>
 
 
-        <h1><a id="오버레이" href="#오버레이">#오버레이</a></h1>
+        <h1><a class="_unclickable" id="오버레이" href="#오버레이">#오버레이</a></h1>
 
 
 
@@ -728,7 +756,7 @@
 
 
         <div class='_digest_itm _digest_itm_subcat' style="text-align: center;">
-            <a class="_digest_h2" id="마커" href="#마커">#마커</a>
+            <a class="_unclickable _digest_h2" id="마커" href="#마커">#마커</a>
         </div>
 
 
@@ -833,7 +861,7 @@
 
 
         <div class='_digest_itm _digest_itm_subcat' style="text-align: center;">
-            <a class="_digest_h2" id="정보창" href="#정보창">#정보창</a>
+            <a class="_unclickable _digest_h2" id="정보창" href="#정보창">#정보창</a>
         </div>
 
 
@@ -854,7 +882,7 @@
 
 
         <div class='_digest_itm _digest_itm_subcat' style="text-align: center;">
-            <a class="_digest_h2" id="도형" href="#도형">#도형</a>
+            <a class="_unclickable _digest_h2" id="도형" href="#도형">#도형</a>
         </div>
 
 
@@ -901,16 +929,23 @@
                 <a class="_digest_a" href="tutorial-polygon-dynamic.example.html">클릭한 지점 폴리곤 연결하기</a>
             </div>
 
-            <div class='_digest_itm s11' style='background-image: url("./img/cover/polyline-dynamic.png")'>
+            <div class='_digest_itm s21' style='background-image: url("./img/cover/polyline-dynamic.png")'>
                 <a href="tutorial-polyline-dynamic.example.html">
                     <div class="_digest_itm_cover"></div>
                 </a>
                 <a class="_digest_a" href="tutorial-polyline-dynamic.example.html">클릭한 지점 폴리라인 연결하기</a>
             </div>
 
+            <div class='_digest_itm s21' style='background-image: url("./img/cover/shape-measures.png")'>
+                <a href="tutorial-shape-measures.example.html">
+                    <div class="_digest_itm_cover"></div>
+                </a>
+                <a class="_digest_a" href="tutorial-shape-measures.example.html">폴리라인, 폴리곤의 거리/면적 재기</a>
+            </div>
+
 
         <div class='_digest_itm _digest_itm_subcat' style="text-align: center;">
-            <a class="_digest_h2" id="지상 오버레이" href="#지상 오버레이">#지상 오버레이</a>
+            <a class="_unclickable _digest_h2" id="지상 오버레이" href="#지상 오버레이">#지상 오버레이</a>
         </div>
 
 
@@ -923,7 +958,7 @@
             </div>
 
 
-        <h1><a id="레이어" href="#레이어">#레이어</a></h1>
+        <h1><a class="_unclickable" id="레이어" href="#레이어">#레이어</a></h1>
 
 
 
@@ -963,7 +998,7 @@
             </div>
 
 
-        <h1><a id="컨트롤" href="#컨트롤">#컨트롤</a></h1>
+        <h1><a class="_unclickable" id="컨트롤" href="#컨트롤">#컨트롤</a></h1>
 
 
 
@@ -996,7 +1031,7 @@
             </div>
 
 
-        <h1><a id="파노라마" href="#파노라마">#파노라마</a></h1>
+        <h1><a class="_unclickable" id="파노라마" href="#파노라마">#파노라마</a></h1>
 
 
 
@@ -1057,11 +1092,34 @@
             </div>
 
 
+        <h1><a class="_unclickable" id="Geocoder" href="#Geocoder">#Geocoder</a></h1>
+
+
+
+            <div class='_digest_itm s11' style='background-image: url("./img/cover/1-geocoder-transcoord.png")'>
+                <a href="tutorial-1-geocoder-transcoord.example.html">
+                    <div class="_digest_itm_cover"></div>
+                </a>
+                <a class="_digest_a" href="tutorial-1-geocoder-transcoord.example.html">좌표계 변환하기</a>
+            </div>
+
+            <div class='_digest_itm s11' style='background-image: url("./img/cover/2-geocoder-tm128coord.png")'>
+                <a href="tutorial-2-geocoder-tm128coord.example.html">
+                    <div class="_digest_itm_cover"></div>
+                </a>
+                <a class="_digest_a" href="tutorial-2-geocoder-tm128coord.example.html">TM128 평면 좌표 투영 사용하기</a>
+            </div>
+
+
     </div>
 </section>
-
-
 </div>
+
+<script type="text/javascript">
+    $('._unclickable').on('click', function(e){
+        e.preventDefault();
+    });
+</script>
 
 		</div>
 	</div>
@@ -1096,7 +1154,7 @@
 	</span>
 
 <span class="jsdoc-message">
-	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a>
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a>
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
@@ -1165,48 +1223,13 @@ $( function () {
       var $this = $( this );
       $this.addClass('table');
     } );
-
+    $("#main>section:not('.tutorial-section')").localScroll({
+        offset: {
+            top: -170 //offset by the height of your header (give or take a few px, see what works for you)
+        }
+    });
 } );
 </script>
-
-
-
-<!--Navigation and Symbol Display-->
-
-<script>
-	$( function () {
-		$( '#main' ).localScroll( {
-			offset : { top : 60 } //offset by the height of your header (give or take a few px, see what works for you)
-		} );
-		$( "dt.name" ).each( function () {
-			var $this = $( this ).find("h4");
-			var icon = $( "<i/>" ).addClass( "icon-plus-sign" ).addClass( "pull-right" ).addClass( "icon-white" );
-			var dt = $(this);
-			var children = dt.next( "dd" );
-
-			dt.prepend( icon ).css( {cursor : "pointer"} );
-			dt.addClass( "member-collapsed member-open" ).addClass( "member" );
-
-			// children.hide();
-
-			// dt.children().on( "click", function () {
-			// 	children = dt.next( "dd" );
-			// 	children.slideToggle( "fast", function () {
-
-			// 		if ( children.is( ":visible" ) ) {
-			// 			icon.addClass( "icon-minus-sign" ).removeClass( "icon-plus-sign" ).removeClass( "icon-white" );
-			// 			dt.addClass( "member-open" ).animate( "member-collapsed" );
-			// 		} else {
-			// 			icon.addClass( "icon-plus-sign" ).removeClass( "icon-minus-sign" ).addClass( "icon-white" );
-			// 			dt.addClass( "member-collapsed" ).removeClass( "member-open" );
-			// 		}
-			// 	} );
-			// } );
-
-		} );
-	} );
-</script>
-
 
 <script type="text/javascript">
 	if (isSearchSupported) {

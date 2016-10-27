@@ -209,6 +209,22 @@
 				
 			            <li><a style="padding-left:16px;" href="naver.maps.UTMK_NAVER.html">naver.maps.UTMK_NAVER</a></li>
 				
+			            <li><a href="#" class="_cat" style="padding-left:10px" >Submodule: geocoder</a></li>
+				
+			            <li><a style="padding-left:16px;" href="naver.maps.TransCoord.html">naver.maps.TransCoord</a></li>
+				
+			            <li><a href="#" class="_cat _subcat" style="padding-left:10px" >&nbsp&nbspExtended Projection</a></li>
+				
+			            <li><a style="padding-left:22px;" href="naver.maps.EPSG3857Coord.html">naver.maps.EPSG3857Coord</a></li>
+				
+			            <li><a style="padding-left:22px;" href="naver.maps.TM128.html">naver.maps.TM128</a></li>
+				
+			            <li><a style="padding-left:22px;" href="naver.maps.TM128Coord.html">naver.maps.TM128Coord</a></li>
+				
+			            <li><a style="padding-left:22px;" href="naver.maps.UTMK_NAVERCoord.html">naver.maps.UTMK_NAVERCoord</a></li>
+				
+			            <li><a style="padding-left:22px;" href="naver.maps.UTMKCoord.html">naver.maps.UTMKCoord</a></li>
+				
 						
 					</ul>
 				</li>
@@ -225,7 +241,7 @@
 					<a href="modules.list.html" itemprop="mainEntityOfPage" class="dropdown-toggle dropdown-toggle-modules" data-toggle="dropdown">Modules<b class="caret"></b></a>
 					<ul class="dropdown-menu ">
 						
-						<li><a href="module-panorama.html">panorama</a></li>
+						<li><a href="module-geocoder.html">geocoder</a></li><li><a href="module-panorama.html">panorama</a></li>
 					</ul>
 				</li>
 				
@@ -306,6 +322,10 @@
 			            <li><a href="#" class="_cat" style="padding-left:10px" >파노라마</a></li>
 				
 			            <li><a style="padding-left:16px;" href="tutorial-Panorama.html">파노라마 생성 및 기본 동작</a></li>
+				
+			            <li><a href="#" class="_cat" style="padding-left:10px" >Geocoder</a></li>
+				
+			            <li><a style="padding-left:16px;" href="tutorial-Geocoder.html">Geocoder 를 활용한 좌표 변환</a></li>
 				
 						
 					</ul>
@@ -423,6 +443,8 @@
 				
 			            <li><a style="padding-left:22px;" href="tutorial-polyline-dynamic.example.html">클릭한 지점 폴리라인 연결하기</a></li>
 				
+			            <li><a style="padding-left:22px;" href="tutorial-shape-measures.example.html">폴리라인, 폴리곤의 거리/면적 재기</a></li>
+				
 			            <li><a href="tutorial-digest.example.html#지상 오버레이" class="_cat _subcat" style="padding-left:10px" >지상 오버레이</a></li>
 				
 			            <li><a style="padding-left:22px;" href="tutorial-ground-overlay.example.html">지상 오버레이 표시하기</a></li>
@@ -466,6 +488,12 @@
 			            <li><a style="padding-left:16px;" href="tutorial-7-panorama-aroundcontrol.example.html">거리/항공뷰 전환하기</a></li>
 				
 			            <li><a style="padding-left:16px;" href="tutorial-8-panorama-flightspot.example.html">지도에 항공뷰 아이콘 표시하기</a></li>
+				
+			            <li><a href="tutorial-digest.example.html#Geocoder" class="_cat" style="padding-left:10px" >Geocoder</a></li>
+				
+			            <li><a style="padding-left:16px;" href="tutorial-1-geocoder-transcoord.example.html">좌표계 변환하기</a></li>
+				
+			            <li><a style="padding-left:16px;" href="tutorial-2-geocoder-tm128coord.example.html">TM128 평면 좌표 투영 사용하기</a></li>
 				
 						
 					</ul>
@@ -2196,6 +2224,144 @@
         
             
 <dt>
+    <h4 class="name" id=".removeDOMListener"><span class="type-signature">&lt;static> </span>removeDOMListener(listeners)</h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>대상 <a href="global.html#HTMLElement">HTMLElement</a>에서 특정 이벤트 알림의 리스너를 제거합니다.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>listeners</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="global.html#DOMEventListener">DOMEventListener</a> -->
+    <a href="global.html#DOMEventListener">DOMEventListener</a>
+    </span>
+|
+
+<span class="param-type">
+    
+    <!-- Array.&lt;<a href="global.html#DOMEventListener">DOMEventListener</a>> -->
+    Array.&lt;<a href="global.html#DOMEventListener">DOMEventListener</a>>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>DOM 이벤트 리스닝 객체 또는 DOM 이벤트 리스닝 객체의 배열</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<dt>
     <h4 class="name" id=".removeDOMListener"><span class="type-signature">&lt;static> </span>removeDOMListener(element, eventName, listener)</h4>
 
     
@@ -2390,144 +2556,6 @@
         
             
 <dt>
-    <h4 class="name" id=".removeDOMListener"><span class="type-signature">&lt;static> </span>removeDOMListener(listeners)</h4>
-
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>대상 <a href="global.html#HTMLElement">HTMLElement</a>에서 특정 이벤트 알림의 리스너를 제거합니다.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>listeners</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">
-    
-    <!-- <a href="global.html#DOMEventListener">DOMEventListener</a> -->
-    <a href="global.html#DOMEventListener">DOMEventListener</a>
-    </span>
-|
-
-<span class="param-type">
-    
-    <!-- Array.&lt;<a href="global.html#DOMEventListener">DOMEventListener</a>> -->
-    Array.&lt;<a href="global.html#DOMEventListener">DOMEventListener</a>>
-    </span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>DOM 이벤트 리스닝 객체 또는 DOM 이벤트 리스닝 객체의 배열</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<dt>
     <h4 class="name" id=".removeListener"><span class="type-signature">&lt;static> </span>removeListener(listeners)</h4>
 
     
@@ -2666,6 +2694,324 @@
         
             
 <dt>
+    <h4 class="name" id=".resumeDispatch"><span class="type-signature">&lt;static> </span>resumeDispatch(target, eventName)</h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>대상 객체의 정지된 특정 이벤트 알림을 재개합니다.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="global.html#object">object</a> -->
+    <a href="global.html#object">object</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>이벤트 대상 객체</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>eventName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="global.html#string">string</a> -->
+    <a href="global.html#string">string</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>이벤트 이름</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id=".stopDispatch"><span class="type-signature">&lt;static> </span>stopDispatch(target, eventName)</h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>대상 객체의 특정 이벤트 알림을 정지시킵니다.<br><code>resumeDispatch</code> 를 통해 이벤트 알림을 재개하기 전까지는 해당 이벤트 발생시 이벤트 핸들러를 호출하지 않습니다.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="global.html#object">object</a> -->
+    <a href="global.html#object">object</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>이벤트 대상 객체</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>eventName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="global.html#string">string</a> -->
+    <a href="global.html#string">string</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>이벤트 이름</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<dt>
     <h4 class="name" id=".trigger"><span class="type-signature">&lt;static> </span>trigger(target, eventName, <span class="optional">eventObject</span>)</h4>
 
     
@@ -2674,7 +3020,7 @@
 
     
     <div class="description">
-        <p>대상 객체에 이벤트 알림을 발생시킵니다.</p>
+        <p>대상 객체에 이벤트 알림을 발생시킵니다.<br>3번째 인수를 생략하면, <code>target</code>에서 발생할 수 있는 기본 이벤트 객체를 전달합니다.<br>기본 이벤트 객체는 <code>target</code>의 <code>_getDefaultEventParameters</code> 메서드를 참조합니다.</p>
     </div>
     
 
@@ -2930,7 +3276,7 @@
 	</span>
 
 <span class="jsdoc-message">
-	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a>
+	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.2</a>
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
@@ -2999,48 +3345,13 @@ $( function () {
       var $this = $( this );
       $this.addClass('table');
     } );
-
+    $("#main>section:not('.tutorial-section')").localScroll({
+        offset: {
+            top: -170 //offset by the height of your header (give or take a few px, see what works for you)
+        }
+    });
 } );
 </script>
-
-
-
-<!--Navigation and Symbol Display-->
-
-<script>
-	$( function () {
-		$( '#main' ).localScroll( {
-			offset : { top : 60 } //offset by the height of your header (give or take a few px, see what works for you)
-		} );
-		$( "dt.name" ).each( function () {
-			var $this = $( this ).find("h4");
-			var icon = $( "<i/>" ).addClass( "icon-plus-sign" ).addClass( "pull-right" ).addClass( "icon-white" );
-			var dt = $(this);
-			var children = dt.next( "dd" );
-
-			dt.prepend( icon ).css( {cursor : "pointer"} );
-			dt.addClass( "member-collapsed member-open" ).addClass( "member" );
-
-			// children.hide();
-
-			// dt.children().on( "click", function () {
-			// 	children = dt.next( "dd" );
-			// 	children.slideToggle( "fast", function () {
-
-			// 		if ( children.is( ":visible" ) ) {
-			// 			icon.addClass( "icon-minus-sign" ).removeClass( "icon-plus-sign" ).removeClass( "icon-white" );
-			// 			dt.addClass( "member-open" ).animate( "member-collapsed" );
-			// 		} else {
-			// 			icon.addClass( "icon-plus-sign" ).removeClass( "icon-minus-sign" ).addClass( "icon-white" );
-			// 			dt.addClass( "member-collapsed" ).removeClass( "member-open" );
-			// 		}
-			// 	} );
-			// } );
-
-		} );
-	} );
-</script>
-
 
 <script type="text/javascript">
 	if (isSearchSupported) {

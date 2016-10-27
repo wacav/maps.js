@@ -14,7 +14,6 @@
 ._digest h1{
     clear: both;
     padding: 40px 0 !important;
-    pointer-events: none;
 }
 
 ._digest h1:first-of-type{
@@ -25,7 +24,6 @@
     font-weight: bold;
     line-height: 280px;
     font-size: 33px;
-    pointer-events: none;
 }
 ._digest ._digest_itm{
     position: relative;
@@ -95,6 +93,10 @@
 ._digest ._digest_itm:hover ._digest_a{
     color: #2780E3;
     padding: 16px 15px;
+}
+
+._unclickable {
+    cursor: default;
 }
 
 @media (max-width: 767px) {
