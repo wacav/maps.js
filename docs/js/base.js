@@ -27,7 +27,13 @@ $(document).ready(function() {
         var pre = $("<pre></pre>"),
             html = codeEl.text() || codeEl.html();
 
-        pre.text(html);
+        // pre.text(html);
+        if ((document.documentMode && document.documentMode <= 8) ||
+            (navigator.userAgent.toLowerCase().indexOf('msie 8') > -1)) {
+            pre[0].innerText = html;
+        } else {
+            pre.text(html);
+        }
 
         snippetEl.append(pre);
     }

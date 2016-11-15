@@ -1,4 +1,7 @@
 window.SearcherDisplay = (function($) {
+
+    var inputEl = $('#search-input'),
+        resultEl = $("#searchResults");
     /**
      * This class provides support for displaying quick search text results to users.
      */
@@ -35,7 +38,7 @@ window.SearcherDisplay = (function($) {
             });
 
             function startSearch() {
-              var searchTerms = $('#search-input').prop("value");
+              var searchTerms = inputEl.prop("value");
               if (searchTerms) {
 
                 var d = {
@@ -47,7 +50,7 @@ window.SearcherDisplay = (function($) {
               }
             }
 
-            $('#search-input').on('keyup', function(evt) {
+            inputEl.on('keyup', function(evt) {
               if (evt.keyCode != 13) {
                 return;
               }
@@ -64,7 +67,7 @@ window.SearcherDisplay = (function($) {
      * This method displays the quick text search results in a modal dialog.
      */
     SearcherDisplay.prototype._displaySearchResults = function(results) {
-            var resultsHolder = $($("#searchResults").find(".modal-body")),
+            var resultsHolder = $(resultEl.find(".modal-body")),
                   fragment = document.createDocumentFragment(),
                   resultsList = document.createElement("ul");
 
@@ -85,8 +88,11 @@ window.SearcherDisplay = (function($) {
             fragment.appendChild(resultsList);
             resultsHolder.append(fragment);
 
-            $("#searchResults").modal();
-            $("#searchResults").css('display', 'block');
+            resultEl.modal();
+            resultEl.on('shown.bs.modal', function () {
+              inputEl.blur();
+            })
+            resultEl.css('display', 'block');
     };
 
     return new SearcherDisplay();
