@@ -413,6 +413,8 @@
 				
 			            <li><a style="padding-left:22px;" href="tutorial-marker-animation.example.html">애니메이션 마커 표시하기</a></li>
 				
+			            <li><a style="padding-left:22px;" href="tutorial-marker-cluster.example.html">마커 클러스터화 하기</a></li>
+				
 			            <li><a style="padding-left:22px;" href="tutorial-marker-intersect.example.html">겹침 마커 처리하기</a></li>
 				
 			            <li><a style="padding-left:22px;" href="tutorial-marker-shape.example.html">마커 인터랙션 영역 설정하기</a></li>
@@ -438,6 +440,8 @@
 			            <li><a style="padding-left:22px;" href="tutorial-5-polygon-options.example.html">폴리곤 옵션 사용하기</a></li>
 				
 			            <li><a style="padding-left:22px;" href="tutorial-6-polyline-options.example.html">폴리라인 옵션 사용하기</a></li>
+				
+			            <li><a style="padding-left:22px;" href="tutorial-pointing-icon.example.html">폴리라인에 화살표 표시하기</a></li>
 				
 			            <li><a style="padding-left:22px;" href="tutorial-polygon-dynamic.example.html">클릭한 지점 폴리곤 연결하기</a></li>
 				
@@ -2095,7 +2099,7 @@
         
             
 <dt>
-    <h4 class="name" id="mul"><span class="type-signature"></span>mul(point)</h4>
+    <h4 class="name" id="mul"><span class="type-signature"></span>mul(x, y)</h4>
 
     
 </dt>
@@ -2103,7 +2107,7 @@
 
     
     <div class="description">
-        <p>좌표 객체의 x, y에 지정한 좌표의 x, y를 곱합니다.</p>
+        <p>좌표 객체의 x, y에 지정한 수치를 곱합니다.</p>
     </div>
     
 
@@ -2138,7 +2142,7 @@
 
         <tr>
             
-                <td class="name"><code>point</code></td>
+                <td class="name"><code>x</code></td>
             
 
             <td class="type">
@@ -2146,15 +2150,8 @@
                 
 <span class="param-type">
     
-    <!-- <a href="global.html#Coord">Coord</a> -->
-    <a href="global.html#Coord">Coord</a>
-    </span>
-|
-
-<span class="param-type">
-    
-    <!-- <a href="global.html#PointLiteral">PointLiteral</a> -->
-    <a href="global.html#PointLiteral">PointLiteral</a>
+    <!-- <a href="global.html#number">number</a> -->
+    <a href="global.html#number">number</a>
     </span>
 
 
@@ -2166,7 +2163,35 @@
 
             
 
-            <td class="description last"><p>곱할 좌표 객체</p></td>
+            <td class="description last"><p>x 좌표</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="global.html#number">number</a> -->
+    <a href="global.html#number">number</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>y 좌표</p></td>
         </tr>
 
     
@@ -2296,7 +2321,7 @@
         
             
 <dt>
-    <h4 class="name" id="mul"><span class="type-signature"></span>mul(x, y)</h4>
+    <h4 class="name" id="mul"><span class="type-signature"></span>mul(point)</h4>
 
     
 </dt>
@@ -2304,7 +2329,7 @@
 
     
     <div class="description">
-        <p>좌표 객체의 x, y에 지정한 수치를 곱합니다.</p>
+        <p>좌표 객체의 x, y에 지정한 좌표의 x, y를 곱합니다.</p>
     </div>
     
 
@@ -2339,7 +2364,7 @@
 
         <tr>
             
-                <td class="name"><code>x</code></td>
+                <td class="name"><code>point</code></td>
             
 
             <td class="type">
@@ -2347,8 +2372,15 @@
                 
 <span class="param-type">
     
-    <!-- <a href="global.html#number">number</a> -->
-    <a href="global.html#number">number</a>
+    <!-- <a href="global.html#Coord">Coord</a> -->
+    <a href="global.html#Coord">Coord</a>
+    </span>
+|
+
+<span class="param-type">
+    
+    <!-- <a href="global.html#PointLiteral">PointLiteral</a> -->
+    <a href="global.html#PointLiteral">PointLiteral</a>
     </span>
 
 
@@ -2360,35 +2392,7 @@
 
             
 
-            <td class="description last"><p>x 좌표</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>y</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">
-    
-    <!-- <a href="global.html#number">number</a> -->
-    <a href="global.html#number">number</a>
-    </span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>y 좌표</p></td>
+            <td class="description last"><p>곱할 좌표 객체</p></td>
         </tr>
 
     
@@ -2658,7 +2662,7 @@
         
             
 <dt>
-    <h4 class="name" id="sub"><span class="type-signature"></span>sub(point)</h4>
+    <h4 class="name" id="sub"><span class="type-signature"></span>sub(x, y)</h4>
 
     
 </dt>
@@ -2666,7 +2670,7 @@
 
     
     <div class="description">
-        <p>좌표 객체의 x, y에 지정한 좌표의 x, y를 뺍니다.</p>
+        <p>좌표 객체의 x, y에 지정한 수치를 뺍니다.</p>
     </div>
     
 
@@ -2701,7 +2705,7 @@
 
         <tr>
             
-                <td class="name"><code>point</code></td>
+                <td class="name"><code>x</code></td>
             
 
             <td class="type">
@@ -2709,15 +2713,8 @@
                 
 <span class="param-type">
     
-    <!-- <a href="global.html#Coord">Coord</a> -->
-    <a href="global.html#Coord">Coord</a>
-    </span>
-|
-
-<span class="param-type">
-    
-    <!-- <a href="global.html#PointLiteral">PointLiteral</a> -->
-    <a href="global.html#PointLiteral">PointLiteral</a>
+    <!-- <a href="global.html#number">number</a> -->
+    <a href="global.html#number">number</a>
     </span>
 
 
@@ -2729,7 +2726,35 @@
 
             
 
-            <td class="description last"><p>뺄 좌표 객체</p></td>
+            <td class="description last"><p>x 좌표</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="global.html#number">number</a> -->
+    <a href="global.html#number">number</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>y 좌표</p></td>
         </tr>
 
     
@@ -2859,7 +2884,7 @@
         
             
 <dt>
-    <h4 class="name" id="sub"><span class="type-signature"></span>sub(x, y)</h4>
+    <h4 class="name" id="sub"><span class="type-signature"></span>sub(point)</h4>
 
     
 </dt>
@@ -2867,7 +2892,7 @@
 
     
     <div class="description">
-        <p>좌표 객체의 x, y에 지정한 수치를 뺍니다.</p>
+        <p>좌표 객체의 x, y에 지정한 좌표의 x, y를 뺍니다.</p>
     </div>
     
 
@@ -2902,7 +2927,7 @@
 
         <tr>
             
-                <td class="name"><code>x</code></td>
+                <td class="name"><code>point</code></td>
             
 
             <td class="type">
@@ -2910,8 +2935,15 @@
                 
 <span class="param-type">
     
-    <!-- <a href="global.html#number">number</a> -->
-    <a href="global.html#number">number</a>
+    <!-- <a href="global.html#Coord">Coord</a> -->
+    <a href="global.html#Coord">Coord</a>
+    </span>
+|
+
+<span class="param-type">
+    
+    <!-- <a href="global.html#PointLiteral">PointLiteral</a> -->
+    <a href="global.html#PointLiteral">PointLiteral</a>
     </span>
 
 
@@ -2923,35 +2955,7 @@
 
             
 
-            <td class="description last"><p>x 좌표</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>y</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">
-    
-    <!-- <a href="global.html#number">number</a> -->
-    <a href="global.html#number">number</a>
-    </span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>y 좌표</p></td>
+            <td class="description last"><p>뺄 좌표 객체</p></td>
         </tr>
 
     
