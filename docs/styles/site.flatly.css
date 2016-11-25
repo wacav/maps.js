@@ -7175,26 +7175,26 @@ section img {
   padding-bottom: 7px;
   display: block;
 }
-footer {
+.footer {
   border-top: 1px solid #e9eaed;
   padding-top: 15px;
   margin-top: 100px;
 }
-footer .copyright {
+.footer .copyright {
   font-size: 90%;
   text-align: center;
   color: #cacacc;
   width: 100%;
   display: block;
 }
-footer .jsdoc-message {
+.footer .jsdoc-message {
   font-size: 90%;
   text-align: center;
   color: #cacacc;
   width: 100%;
   display: block;
 }
-footer a {
+.footer a {
   color: #cacacc;
 }
 code {
