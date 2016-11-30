@@ -8,8 +8,8 @@
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-	<title>AroundControl | 네이버 지도 API v3</title>
-	<meta name="description" content="Class: naver.maps.AroundControl">
+	<title>Service | 네이버 지도 API v3</title>
+	<meta name="description" content="StaticObjects: Service">
 	<meta property="og:type" content="website">
 	<meta property="og:site_name" content="NAVER Maps API v3 바로가기">
 	<meta property="og:title" content="NAVER Maps API v3">
@@ -563,12 +563,12 @@
 					<span itemprop="keywords">api</span>
 					<span itemprop="keywords">v3</span>
 					<span itemprop="keywords">네이버 지도 API</span>
-					<span itemprop="keywords">AroundControl</span>
+					<span itemprop="keywords">Service</span>
 				</div>
 			</div>
 			
 
-	<h1 class="page-title">Class: naver.maps.AroundControl</h1>
+	<h1 class="page-title">StaticObjects: Service</h1>
 <section>
 
 <header>
@@ -576,13 +576,8 @@
         <h2>
             <span class="ancestors"><a href="naver.html">naver</a><a href="naver.maps.html">.maps</a>.</span>
         
-        AroundControl
+        Service
         </h2>
-        
-            <div class="class-description" itemprop="description"><p><code>AroundControl</code> 클래스는 거리뷰/항공뷰 전환 컨트롤을 정의하는 클래스입니다.</p>
-<blockquote>
-<p>이 클래스는 <a href="module-panorama.html">panorama</a> 서브모듈을 로드해야 합니다.</p>
-</blockquote></div>
         
     
 </header>
@@ -592,25 +587,99 @@
     <div class="container-overview">
     
         
-<dt>
-    <h4 class="name" id="AroundControl"><span class="type-signature"></span>new naver.maps.AroundControl(AroundControlOptions)</h4>
+            <div class="description" itemprop="description"><p><code>Service</code> 객체는 NAVER 지도 API v3를 통해 호출 가능한 서버 API들을 메서드로 제공합니다.</p></div>
+        
+
+        
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+	<dt class="tag-tutorial method-doc-label method-doc-details-label">Tutorials</dt>
+	<dd class="tag-tutorial">
+		<ul>
+			<li><a href="tutorial-Geocoder.html">Geocoder 를 활용한 좌표 변환</a></li>
+			</ul>
+	</dd>
+	
+
+	
+
+	
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        <dl>
+            
+<hr>
+<dt class="name" id=".CoordType">
+    <h4><span class="type-signature">&lt;static, readonly> </span>CoordType</h4>
 
     
 </dt>
 <dd>
-
+    
+    <div class="description">
+        <p><code>CoordType</code> 객체는 좌표 체계의 이름을 나타냅니다.</p>
+    </div>
     
 
     
 
     
-
+<dl class="details">
     
-    
-        <h5>Parameters</h5>
-        
 
-<table class="params table table-striped">
+    <h5 class="subsection-title">Properties</h5>
+
+    <dl>
+
+<table class="props table table-striped">
     <thead>
     <tr>
         
@@ -622,6 +691,8 @@
         
 
         
+        <th>Default</th>
+        
 
         <th class="last">Description</th>
     </tr>
@@ -632,7 +703,7 @@
 
         <tr>
             
-                <td class="name"><code>AroundControlOptions</code></td>
+                <td class="name"><code>LATLNG</code></td>
             
 
             <td class="type">
@@ -640,8 +711,8 @@
                 
 <span class="param-type">
     
-    <!-- <a href="naver.maps.AroundControl.html#~AroundControlOptions">naver.maps.AroundControl~AroundControlOptions</a> -->
-    <a href="naver.maps.AroundControl.html#~AroundControlOptions">AroundControlOptions</a>
+    <!-- <a href="global.html#string">string</a> -->
+    <a href="global.html#string">string</a>
     </span>
 
 
@@ -652,18 +723,55 @@
             
 
             
+                <td class="default">
+                
+                    latlng
+                
+                </td>
+            
 
-            <td class="description last"><p>UI 컨트롤 옵션</p></td>
+            <td class="description last"><p>위/경도 좌표계를 나타냅니다.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>TM128</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="global.html#string">string</a> -->
+    <a href="global.html#string">string</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    tm128
+                
+                </td>
+            
+
+            <td class="description last"><p>TM128 좌표계를 나타냅니다.</p></td>
         </tr>
 
     
     </tbody>
 </table>
+</dl>
 
-    
-
-    
-<dl class="details">
     
 
 	
@@ -703,67 +811,327 @@
 
 
     
-    <h5>Requires</h5>
-    <ul>
-        <li><a href="module-panorama.html">module:panorama</a></li>
-    </ul>
-    
+</dd>
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h5>Example</h5>
         
-    <pre class="sunlight-highlight-javascript">var pano = new naver.maps.Panorama(&quot;pano&quot;, {
-    position: new naver.maps.LatLng(37.3599605, 127.1058814),
-    aroundControl: true,
-    aroundControlOptions: {
-        position: naver.maps.Position.TOP_RIGHT
-    }
-});</pre>
+            
+<hr>
+<dt class="name" id=".Encoding">
+    <h4><span class="type-signature">&lt;static, readonly> </span>Encoding</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p><code>Encoding</code> 객체는 서비스의 응답에 대한 인코딩 형태를 나타냅니다.</p>
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+    <h5 class="subsection-title">Properties</h5>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>UTF_8</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="global.html#string">string</a> -->
+    <a href="global.html#string">string</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    utf-8
+                
+                </td>
+            
+
+            <td class="description last"><p><code>utf-8</code> 인코딩을 나타냅니다.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>EUC_KR</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="global.html#string">string</a> -->
+    <a href="global.html#string">string</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    euc-kr
+                
+                </td>
+            
+
+            <td class="description last"><p><code>euc-kr</code> 인코딩을 나타냅니다.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
 
 
     
 </dd>
 
-    
-    </div>
+        
+            
+<hr>
+<dt class="name" id=".Status">
+    <h4><span class="type-signature">&lt;static, readonly> </span>Status</h4>
 
     
-        <h3 class="subsection-title">Extends</h3>
+</dt>
+<dd>
+    
+    <div class="description">
+        <p><code>Status</code> 객체는 서비스의 응답에 대한 상태를 나타냅니다.</p>
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+    <h5 class="subsection-title">Properties</h5>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
 
         
 
+        
+        <th>Default</th>
+        
 
-    <ul>
-        <li><a href="naver.maps.CustomControl.html">naver.maps.CustomControl</a></li>
-    </ul>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
 
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>OK</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="global.html#number">number</a> -->
+    <a href="global.html#number">number</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    200
+                
+                </td>
+            
+
+            <td class="description last"><p>요청이 성공한 상태입니다.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>ERROR</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="global.html#number">number</a> -->
+    <a href="global.html#number">number</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    500
+                
+                </td>
+            
+
+            <td class="description last"><p>요청이 실패한 상태입니다.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
 
     
 
     
-        <h3 class="subsection-title">Requires</h3>
-
-        <ul>
-            <li><a href="module-panorama.html">module:panorama</a></li>
-        </ul>
-    
 
     
 
     
 
-    
+	
 
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        </dl>
     
 
     
@@ -772,7 +1140,7 @@
         <dl>
             
 <dt>
-    <h4 class="name" id="getElement"><span class="type-signature"></span>getElement()</h4>
+    <h4 class="name" id="fromAddrToCoord"><span class="type-signature"></span>fromAddrToCoord()</h4>
 
     
 </dt>
@@ -780,7 +1148,7 @@
 
     
     <div class="description">
-        <p>UI 컨트롤의 HTML 노드를 반환합니다.</p>
+        <p>특정 주소의 좌표를 반환하는 <code>geocode</code> API를 호출합니다.</p>
     </div>
     
 
@@ -800,42 +1168,40 @@
 	
 
 	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="naver.maps.CustomControl.html#getElement">naver.maps.CustomControl#getElement</a>
-			</li>
-		</ul>
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see method-doc-label method-doc-details-label">See</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="naver.maps.Service.html#geocode">naver.maps.Service#geocode</a></li>
+			</ul>
 	</dd>
 	
 
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
 	
 </dl>
 
@@ -851,60 +1217,6 @@
     
 
     
-    <h5>Returns</h5>
-    
-            <!-- 
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="global.html#HTMLElement">HTMLElement</a></span>
-
-
-
-    </dd>
-</dl>
-
-
- -->
-<!-- ! -->
-
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Type</th>
-        
-
-        
-    </tr>
-    </thead>
-
-    <tbody>
-        <tr>
-            
-                <td class="name"><code>
-<span class="param-type">
-    
-    <!-- <a href="global.html#HTMLElement">HTMLElement</a> -->
-    <a href="global.html#HTMLElement">HTMLElement</a>
-    </span>
-
-
-</code></td>
-            
-
-            
-        </tr>
-    </tbody>
-</table>
-
-        
 
     
 </dd>
@@ -912,7 +1224,7 @@
         
             
 <dt>
-    <h4 class="name" id="getMap"><span class="type-signature"></span>getMap()</h4>
+    <h4 class="name" id="fromCoordToAddr"><span class="type-signature"></span>fromCoordToAddr()</h4>
 
     
 </dt>
@@ -920,7 +1232,7 @@
 
     
     <div class="description">
-        <p>현재 UI 컨트롤이 추가된 지도 객체를 반환합니다.</p>
+        <p>특정 좌표에 해당하는 주소를 반환하는 <code>reversegeocode</code> API를 호출합니다.</p>
     </div>
     
 
@@ -940,42 +1252,40 @@
 	
 
 	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="naver.maps.CustomControl.html#getMap">naver.maps.CustomControl#getMap</a>
-			</li>
-		</ul>
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+	<dt class="tag-see method-doc-label method-doc-details-label">See</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><a href="naver.maps.Service.html#reverseGeocode">naver.maps.Service#reverseGeocode</a></li>
+			</ul>
 	</dd>
 	
 
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
 	
 </dl>
 
@@ -991,79 +1301,6 @@
     
 
     
-    <h5>Returns</h5>
-    
-            <!-- 
-<div class="param-desc">
-    <p>지도 객체</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="naver.maps.Map.html">naver.maps.Map</a></span>
-|
-
-<span class="param-type"><a href="global.html#null">null</a></span>
-
-
-
-    </dd>
-</dl>
-
-
- -->
-<!-- ! -->
-
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Type</th>
-        
-
-        
-        <th class="last">Description</th>
-        
-    </tr>
-    </thead>
-
-    <tbody>
-        <tr>
-            
-                <td class="name"><code>
-<span class="param-type">
-    
-    <!-- <a href="naver.maps.Map.html">naver.maps.Map</a> -->
-    <a href="naver.maps.Map.html">naver.maps.Map</a>
-    </span>
-|
-
-<span class="param-type">
-    
-    <!-- <a href="global.html#null">null</a> -->
-    <a href="global.html#null">null</a>
-    </span>
-
-
-</code></td>
-            
-
-            
-                <td class="description last"><p>지도 객체</p></td>
-
-            
-        </tr>
-    </tbody>
-</table>
-
-        
 
     
 </dd>
@@ -1071,7 +1308,7 @@
         
             
 <dt>
-    <h4 class="name" id="getOptions"><span class="type-signature"></span>getOptions(<span class="optional">key</span>)</h4>
+    <h4 class="name" id="geocode"><span class="type-signature"></span>geocode(options, callback)</h4>
 
     
 </dt>
@@ -1079,7 +1316,7 @@
 
     
     <div class="description">
-        <p>UI 컨트롤의 모든 옵션 또는 특정 옵션의 값을 반환합니다.</p>
+        <p>특정 주소의 좌표를 반환하는 <code>geocode</code> API를 호출합니다.</p>
     </div>
     
 
@@ -1091,6 +1328,135 @@
     
         <h5>Parameters</h5>
         
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="naver.maps.Service.html#~ServiceOptions">naver.maps.Service~ServiceOptions</a> -->
+    <a href="naver.maps.Service.html#~ServiceOptions">ServiceOptions</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>서버 API 호출시 전달할 옵션</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>address</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="global.html#string">string</a> -->
+    <a href="global.html#string">string</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>좌표를 검색하기 위한 <code>주소</code></p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="global.html#function">function</a> -->
+    <a href="global.html#function">function</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>결과 반환 시 실행할 콜백함수</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
 
 <table class="params table table-striped">
     <thead>
@@ -1116,7 +1482,7 @@
 
         <tr>
             
-                <td class="name"><code>key</code></td>
+                <td class="name"><code>status</code></td>
             
 
             <td class="type">
@@ -1124,8 +1490,44 @@
                 
 <span class="param-type">
     
-    <!-- <a href="global.html#string">string</a> -->
-    <a href="global.html#string">string</a>
+    <!-- <a href="naver.maps.Service.html#.Status">naver.maps.Service.Status</a> -->
+    <a href="naver.maps.Service.html#.Status">naver.maps.Service.Status</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>응답 결과에 대한 상태 코드</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>response</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="naver.maps.Service.html#~GeocodeResponse">naver.maps.Service~GeocodeResponse</a> -->
+    <a href="naver.maps.Service.html#~GeocodeResponse">GeocodeResponse</a>
     </span>
 
 
@@ -1147,7 +1549,14 @@
 
             
 
-            <td class="description last"><p>가져올 옵션의 이름</p></td>
+            <td class="description last"><p>응답 본문</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -1165,15 +1574,6 @@
 	
 
 	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="naver.maps.CustomControl.html#getOptions">naver.maps.CustomControl#getOptions</a>
-			</li>
-		</ul>
-	</dd>
-	
 
     
 
@@ -1216,69 +1616,6 @@
     
 
     
-    <h5>Returns</h5>
-    
-            <!-- 
-<div class="param-desc">
-    <p>모든 옵션 또는 특정 <code>key</code>에 해당되는 옵션의 값</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="global.html#any">any</a></span>
-
-
-
-    </dd>
-</dl>
-
-
- -->
-<!-- ! -->
-
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Type</th>
-        
-
-        
-        <th class="last">Description</th>
-        
-    </tr>
-    </thead>
-
-    <tbody>
-        <tr>
-            
-                <td class="name"><code>
-<span class="param-type">
-    
-    <!-- <a href="global.html#any">any</a> -->
-    <a href="global.html#any">any</a>
-    </span>
-
-
-</code></td>
-            
-
-            
-                <td class="description last"><p>모든 옵션 또는 특정 <code>key</code>에 해당되는 옵션의 값</p></td>
-
-            
-        </tr>
-    </tbody>
-</table>
-
-        
 
     
 </dd>
@@ -1286,7 +1623,7 @@
         
             
 <dt>
-    <h4 class="name" id="html"><span class="type-signature"></span>html(<span class="optional">html</span>)</h4>
+    <h4 class="name" id="reverseGeocode"><span class="type-signature"></span>reverseGeocode(options, callback)</h4>
 
     
 </dt>
@@ -1294,7 +1631,7 @@
 
     
     <div class="description">
-        <p>지정한 HTML 마크업을 컨테이너 <code>&lt;div&gt;</code> 요소 내에 렌더링하거나, UI 컨트롤의 컨테이너 <code>&lt;div&gt;</code> 요소를 반환합니다.</p>
+        <p>특정 좌표에 해당하는 주소를 반환하는 <code>reversegeocode</code> API를 호출합니다.</p>
     </div>
     
 
@@ -1306,6 +1643,142 @@
     
         <h5>Parameters</h5>
         
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="naver.maps.Service.html#~ServiceOptions">naver.maps.Service~ServiceOptions</a> -->
+    <a href="naver.maps.Service.html#~ServiceOptions">ServiceOptions</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>서버 API 호출시 전달할 옵션</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>location</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="global.html#Coord">Coord</a> -->
+    <a href="global.html#Coord">Coord</a>
+    </span>
+|
+
+<span class="param-type">
+    
+    <!-- <a href="global.html#CoordLiteral">CoordLiteral</a> -->
+    <a href="global.html#CoordLiteral">CoordLiteral</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>주소를 검색하기 위한 <code>좌표</code>에 해당하는 위치 값</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="global.html#function">function</a> -->
+    <a href="global.html#function">function</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>결과 반환 시 실행할 콜백함수</p>
+                <h6 class="method-params-label method-subparams-label">Properties</h6>
+                
 
 <table class="params table table-striped">
     <thead>
@@ -1331,7 +1804,7 @@
 
         <tr>
             
-                <td class="name"><code>html</code></td>
+                <td class="name"><code>status</code></td>
             
 
             <td class="type">
@@ -1339,8 +1812,44 @@
                 
 <span class="param-type">
     
-    <!-- <a href="global.html#string">string</a> -->
-    <a href="global.html#string">string</a>
+    <!-- <a href="naver.maps.Service.html#.Status">naver.maps.Service.Status</a> -->
+    <a href="naver.maps.Service.html#.Status">naver.maps.Service.Status</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>응답 결과에 대한 상태 코드</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>response</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="naver.maps.Service.html#~ReverseGeocodeResponse">naver.maps.Service~ReverseGeocodeResponse</a> -->
+    <a href="naver.maps.Service.html#~ReverseGeocodeResponse">ReverseGeocodeResponse</a>
     </span>
 
 
@@ -1362,227 +1871,14 @@
 
             
 
-            <td class="description last"><p>UI 컨트롤 마크업</p></td>
+            <td class="description last"><p>응답 본문</p></td>
         </tr>
 
     
     </tbody>
 </table>
 
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="naver.maps.CustomControl.html#html">naver.maps.CustomControl#html</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns</h5>
-    
-            <!-- 
-<div class="param-desc">
-    <p>UI 컨트롤 마크업</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="global.html#string">string</a></span>
-|
-
-<span class="param-type">undefined</span>
-
-
-
-    </dd>
-</dl>
-
-
- -->
-<!-- ! -->
-
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Type</th>
-        
-
-        
-        <th class="last">Description</th>
-        
-    </tr>
-    </thead>
-
-    <tbody>
-        <tr>
-            
-                <td class="name"><code>
-<span class="param-type">
-    
-    <!-- <a href="global.html#string">string</a> -->
-    <a href="global.html#string">string</a>
-    </span>
-|
-
-<span class="param-type">
-    
-    <!-- undefined -->
-    undefined
-    </span>
-
-
-</code></td>
-            
-
-            
-                <td class="description last"><p>UI 컨트롤 마크업</p></td>
-
-            
-        </tr>
-    </tbody>
-</table>
-
-        
-
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="setMap"><span class="type-signature"></span>setMap(map)</h4>
-
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>UI 컨트롤을 지도에 추가합니다. 인수로 <a href="global.html#null">null</a>을 전달하면 UI 컨트롤을 지도에서 제거합니다.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>map</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">
-    
-    <!-- <a href="naver.maps.Map.html">naver.maps.Map</a> -->
-    <a href="naver.maps.Map.html">naver.maps.Map</a>
-    </span>
-|
-
-<span class="param-type">
-    
-    <!-- <a href="global.html#null">null</a> -->
-    <a href="global.html#null">null</a>
-    </span>
-
-
-
-            
             </td>
-
-            
-
-            
-
-            <td class="description last"><p>지도 객체</p></td>
         </tr>
 
     
@@ -1599,295 +1895,6 @@
 
 	
 
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="naver.maps.CustomControl.html#setMap">naver.maps.CustomControl#setMap</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="setOptions"><span class="type-signature"></span>setOptions(newOptions)</h4>
-
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>UI 컨트롤의 옵션을 변경하거나 새로 설정합니다.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>newOptions</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">
-    
-    <!-- <a href="naver.maps.CustomControl.html#~ControlOptions">naver.maps.CustomControl~ControlOptions</a> -->
-    <a href="naver.maps.CustomControl.html#~ControlOptions">ControlOptions</a>
-    </span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>UI 컨트롤 옵션</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="naver.maps.CustomControl.html#setOptions">naver.maps.CustomControl#setOptions</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="setPosition"><span class="type-signature"></span>setPosition(position)</h4>
-
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>UI 컨트롤의 위치를 설정합니다.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>position</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">
-    
-    <!-- <a href="naver.maps.html#.Position">naver.maps.Position</a> -->
-    <a href="naver.maps.html#.Position">naver.maps.Position</a>
-    </span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>컨트롤 위치</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="naver.maps.CustomControl.html#setPosition">naver.maps.CustomControl#setPosition</a>
-			</li>
-		</ul>
-	</dd>
 	
 
     
@@ -1944,15 +1951,15 @@
         <dl>
                 
 <hr>
-<dt class="name" id="~AroundControlOptions">
-    <h4>AroundControlOptions</h4>
+<dt class="name" id="~AddressItem">
+    <h4>AddressItem</h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        <p><code>AroundControlOptions</code> 객체는 거리뷰/항공뷰 전환 컨트롤의 위치를 정의하는 옵션을 나타냅니다.</p>
+        <p><code>AddressItem</code> 은 특정 주소에 대한 정보를 나타냅니다.</p>
     </div>
     
 
@@ -1989,7 +1996,79 @@
         
 
         
-        <th>Default</th>
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>address</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="global.html#string">string</a> -->
+    <a href="global.html#string">string</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>개별 주소의 전체 텍스트</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>addrdetail</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="global.html#string">string</a> -->
+    <a href="global.html#string">string</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>개별 주소의 상세 정보</p>
+                <h6>Properties</h6>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
         
 
         <th class="last">Description</th>
@@ -2001,7 +2080,7 @@
 
         <tr>
             
-                <td class="name"><code>position</code></td>
+                <td class="name"><code>country</code></td>
             
 
             <td class="type">
@@ -2009,8 +2088,8 @@
                 
 <span class="param-type">
     
-    <!-- <a href="naver.maps.html#.Position">naver.maps.Position</a> -->
-    <a href="naver.maps.html#.Position">naver.maps.Position</a>
+    <!-- <a href="global.html#string">string</a> -->
+    <a href="global.html#string">string</a>
     </span>
 
 
@@ -2021,14 +2100,420 @@
             
 
             
-                <td class="default">
-                
-                    TOP_RIGHT
-                
-                </td>
+
+            <td class="description last"><p>개별 주소의 국가명</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>sido</code></td>
             
 
-            <td class="description last"><p>거리뷰/항공뷰 전환 컨트롤을 배치할 위치입니다.</p></td>
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="global.html#string">string</a> -->
+    <a href="global.html#string">string</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>개별 주소가 속한 특별시/광역시/도에 해당되는 정보</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>sigugun</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="global.html#string">string</a> -->
+    <a href="global.html#string">string</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>개별 주소가 속한 일반시/구/군/면 해당되는 정보</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>dongmyun</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="global.html#string">string</a> -->
+    <a href="global.html#string">string</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>개별 주소가 속한 동/면/리에 해당되는 정보</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>rest</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="global.html#string">string</a> -->
+    <a href="global.html#string">string</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>지번 주소 또는 도로명과 같은 개별 주소의 나머지 정보</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>isRoadAddress</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="global.html#boolean">boolean</a> -->
+    <a href="global.html#boolean">boolean</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>해당 주소가 도로명 주소인지의 여부</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>point</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="global.html#PointObjectLiteral">PointObjectLiteral</a> -->
+    <a href="global.html#PointObjectLiteral">PointObjectLiteral</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>개별 주소의 좌표값</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt class="name" id="~GeocodeResponse">
+    <h4>GeocodeResponse</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p><code>GeocodeResponse</code> 는 특정 주소의 좌표를 반환하는 <code>geocode</code> API의 응답 형태입니다.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="global.html#object">object</a></span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+    <h5 class="subsection-title">Properties</h5>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>result</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="global.html#object">object</a> -->
+    <a href="global.html#object">object</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>API의 응답 내용을 담고 있는 컨테이너.</p>
+                <h6>Properties</h6>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>userquery</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="global.html#string">string</a> -->
+    <a href="global.html#string">string</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>API에 질의한 <code>주소</code></p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>total</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="global.html#number">number</a> -->
+    <a href="global.html#number">number</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>사용자가 질의한 주소에 해당되는 좌표의 결과 수</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>items</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- Array.&lt;<a href="naver.maps.Service.html#~AddressItem">naver.maps.Service~AddressItem</a>> -->
+    Array.&lt;<a href="naver.maps.Service.html#~AddressItem">naver.maps.Service~AddressItem</a>>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>좌표 목록의 배열</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -2077,19 +2562,497 @@
     
         <h5>Example</h5>
         
-    <pre class="sunlight-highlight-javascript">var pano = new naver.maps.Panorama(&quot;pano&quot;, {
-    position: new naver.maps.LatLng(37.3599605, 127.1058814),
-    size: new naver.maps.Size(800, 600),
-    pov: {
-        pan: -135,
-        tilt: 29,
-        fov: 100
-    },
-    aroundControl: true,
-    aroundControlOptions: {
-        position: naver.maps.Position.TOP_RIGHT
-    }
-});</pre>
+    <pre class="sunlight-highlight-javascript">{
+  &quot;result&quot;: {
+    &quot;total&quot;: 1,
+    &quot;userquery&quot;: &quot;불정로6&quot;,
+    &quot;items&quot;: [
+      {
+        &quot;address&quot;: &quot;경기도 성남시 분당구 불정로  6 그린팩토리&quot;,
+        &quot;addrdetail&quot;: {
+          &quot;country&quot;: &quot;대한민국&quot;,
+          &quot;sido&quot;: &quot;경기도&quot;,
+          &quot;sigugun&quot;: &quot;성남시 분당구&quot;,
+          &quot;dongmyun&quot;: &quot;불정로&quot;,
+          &quot;rest&quot;: &quot; 6 그린팩토리&quot;
+        },
+        &quot;isRoadAddress&quot;: true,
+        &quot;point&quot;: {
+          &quot;x&quot;: 127.1052133,
+          &quot;y&quot;: 37.3595316
+        }
+      }
+    ]
+  }
+}</pre>
+
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt class="name" id="~ReverseGeocodeResponse">
+    <h4>ReverseGeocodeResponse</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p><code>ReverseGeocodeResponse</code> 는 특정 좌표에 해당하는 주소를 반환하는 <code>reversegeocode</code> API의 응답 형태입니다.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="global.html#object">object</a></span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+    <h5 class="subsection-title">Properties</h5>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>result</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="global.html#object">object</a> -->
+    <a href="global.html#object">object</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>API의 응답 내용을 담고 있는 컨테이너.</p>
+                <h6>Properties</h6>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>userquery</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="global.html#string">string</a> -->
+    <a href="global.html#string">string</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>API에 질의한 <code>좌표</code></p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>total</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="global.html#number">number</a> -->
+    <a href="global.html#number">number</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>사용자가 질의한 좌표에 해당되는 주소의 결과 수</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>items</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- Array.&lt;<a href="naver.maps.Service.html#~AddressItem">naver.maps.Service~AddressItem</a>> -->
+    Array.&lt;<a href="naver.maps.Service.html#~AddressItem">naver.maps.Service~AddressItem</a>>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>주소 목록의 배열</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+        <h5>Example</h5>
+        
+    <pre class="sunlight-highlight-javascript">{
+  &quot;result&quot;: {
+    &quot;total&quot;: 2,
+    &quot;userquery&quot;: &quot;127.1052133,37.3595316&quot;,
+    &quot;items&quot;: [
+      {
+        &quot;address&quot;: &quot;경기도 성남시 분당구 정자동 178-1&quot;,
+        &quot;addrdetail&quot;: {
+          &quot;country&quot;: &quot;대한민국&quot;,
+          &quot;sido&quot;: &quot;경기도&quot;,
+          &quot;sigugun&quot;: &quot;성남시 분당구&quot;,
+          &quot;dongmyun&quot;: &quot;정자동&quot;,
+          &quot;rest&quot;: &quot;178-1&quot;
+        },
+        &quot;isRoadAddress&quot;: false,
+        &quot;point&quot;: {
+          &quot;x&quot;: 127.1052208,
+          &quot;y&quot;: 37.3595122
+        }
+      },
+      {
+        &quot;address&quot;: &quot;경기도 성남시 분당구 불정로 6 그린팩토리&quot;,
+        &quot;addrdetail&quot;: {
+          &quot;country&quot;: &quot;대한민국&quot;,
+          &quot;sido&quot;: &quot;경기도&quot;,
+          &quot;sigugun&quot;: &quot;성남시 분당구&quot;,
+          &quot;dongmyun&quot;: &quot;불정로&quot;,
+          &quot;rest&quot;: &quot;6 그린팩토리&quot;
+        },
+        &quot;isRoadAddress&quot;: true,
+        &quot;point&quot;: {
+          &quot;x&quot;: 127.1052133,
+          &quot;y&quot;: 37.3595316
+        }
+      }
+    ]
+  }
+}</pre>
+
+
+    
+</dd>
+
+            
+                
+<hr>
+<dt class="name" id="~ServiceOptions">
+    <h4>ServiceOptions</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p><code>ServiceOptions</code> 는 서버 API 호출시 전달하기 위한 옵션을 나타냅니다.</p>
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type"><a href="global.html#object">object</a></span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+    <h5 class="subsection-title">Properties</h5>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>encoding</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="naver.maps.Service.html#.Encoding">naver.maps.Service.Encoding</a> -->
+    <a href="naver.maps.Service.html#.Encoding">naver.maps.Service.Encoding</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    utf-8
+                
+                </td>
+            
+
+            <td class="description last"><p>서비스의 응답에 대한 인코딩</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>coordType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="naver.maps.Service.html#.CoordType">naver.maps.Service.CoordType</a> -->
+    <a href="naver.maps.Service.html#.CoordType">naver.maps.Service.CoordType</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    latlng
+                
+                </td>
+            
+
+            <td class="description last"><p>좌표 체계의 이름</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
 
 
     

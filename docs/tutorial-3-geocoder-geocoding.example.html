@@ -8,8 +8,8 @@
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-	<title>AroundControl | 네이버 지도 API v3</title>
-	<meta name="description" content="Class: naver.maps.AroundControl">
+	<title>주소와 좌표 검색 API 사용하기 | 네이버 지도 API v3</title>
+	<meta name="description" content="Example: 주소와 좌표 검색 API 사용하기">
 	<meta property="og:type" content="website">
 	<meta property="og:site_name" content="NAVER Maps API v3 바로가기">
 	<meta property="og:title" content="NAVER Maps API v3">
@@ -546,7 +546,7 @@
 <div class="row">
 
 	
-	<div class="col-md-8">
+	<div class="col-md-12">
 	
 		<div id="main" itemscope itemtype="https://schema.org/TechArticle">
 			<div style="display:none;">
@@ -563,1558 +563,153 @@
 					<span itemprop="keywords">api</span>
 					<span itemprop="keywords">v3</span>
 					<span itemprop="keywords">네이버 지도 API</span>
-					<span itemprop="keywords">AroundControl</span>
+					<span itemprop="keywords">주소와 좌표 검색 API 사용하기</span>
 				</div>
 			</div>
-			
+			<script src="./js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="./js/base.js"></script>
+<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=MK_1sBFRuO6XEvDi29iW&amp;submodules=panorama,geocoder"></script>
+<link rel="stylesheet" type="text/css" href="./css/base.css" />
 
-	<h1 class="page-title">Class: naver.maps.AroundControl</h1>
-<section>
-
-<header>
-    
-        <h2>
-            <span class="ancestors"><a href="naver.html">naver</a><a href="naver.maps.html">.maps</a>.</span>
-        
-        AroundControl
-        </h2>
-        
-            <div class="class-description" itemprop="description"><p><code>AroundControl</code> 클래스는 거리뷰/항공뷰 전환 컨트롤을 정의하는 클래스입니다.</p>
-<blockquote>
-<p>이 클래스는 <a href="module-panorama.html">panorama</a> 서브모듈을 로드해야 합니다.</p>
-</blockquote></div>
-        
-    
-</header>
-
-
+<section class="tutorial-section">
+<header></header>
 <article>
-    <div class="container-overview">
     
-        
-<dt>
-    <h4 class="name" id="AroundControl"><span class="type-signature"></span>new naver.maps.AroundControl(AroundControlOptions)</h4>
 
-    
-</dt>
-<dd>
+    <h1>주소와 좌표 검색 API 사용하기</h1>
 
     
 
-    
+<!--  -->
 
-    
+<style type="text/css">
+.search { position:absolute;z-index:1000;top:20px;left:20px; }
+.search #address { width:150px;height:20px;line-height:20px;border:solid 1px #555;padding:5px;font-size:12px;box-sizing:content-box; }
+.search #submit { height:30px;line-height:30px;padding:0 10px;font-size:12px;border:solid 1px #555;border-radius:3px;cursor:pointer;box-sizing:content-box; }
+</style>
 
-    
-    
-        <h5>Parameters</h5>
-        
+<div id="wrap" class="section">
+    <h2>주소와 좌표 검색 API 사용하기</h2>
+    <p>Geocoder 서브모듈의 Service 객체를 사용하여, 주소로 좌표 검색 (Geocode) 또는 좌표로 주소를 검색 (ReverseGeocode) 하는 예제입니다.<br />
+    입력창에 주소를 입력하여 검색하면 해당 주소의 좌표로 이동하며, 지도를 클릭하면 해당 지점의 TM128 좌표로 주소를 검색합니다.</p>
+    <div id="map" style="width:100%;height:600px;">
+        <div class="search" style="">
+            <input id="address" type="text" placeholder="검색할 주소" value="불정로 6" />
+            <input id="submit" type="button" value="주소 검색" />
+        </div>
+    </div>
+    <code id="snippet" class="snippet"></code>
+</div>
 
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
+<script id="code">
+var map = new naver.maps.Map("map", {
+    center: new naver.maps.LatLng(37.3595316, 127.1052133),
+    zoom: 10,
+    mapTypeControl: true
+});
 
-        <th>Type</th>
+var infoWindow = new naver.maps.InfoWindow({
+    anchorSkew: true
+});
 
-        
+map.setCursor('pointer');
 
-        
+// search by tm128 coordinate
+function searchCoordinateToAddress(latlng) {
+    var tm128 = naver.maps.TransCoord.fromLatLngToTM128(latlng);
 
-        <th class="last">Description</th>
-    </tr>
-    </thead>
+    infoWindow.close();
 
-    <tbody>
-    
+    naver.maps.Service.reverseGeocode({
+        location: tm128,
+        coordType: naver.maps.Service.CoordType.TM128
+    }, function(status, response) {
+        if (status === naver.maps.Service.Status.ERROR) {
+            return alert('Something Wrong!');
+        }
 
-        <tr>
-            
-                <td class="name"><code>AroundControlOptions</code></td>
-            
+        var items = response.result.items,
+            htmlAddresses = [];
 
-            <td class="type">
-            
-                
-<span class="param-type">
-    
-    <!-- <a href="naver.maps.AroundControl.html#~AroundControlOptions">naver.maps.AroundControl~AroundControlOptions</a> -->
-    <a href="naver.maps.AroundControl.html#~AroundControlOptions">AroundControlOptions</a>
-    </span>
+        for (var i=0, ii=items.length, item, addrType; i<ii; i++) {
+            item = items[i];
+            addrType = item.isRoadAddress ? '[도로명 주소]' : '[지번 주소]';
 
+            htmlAddresses.push((i+1) +'. '+ addrType +' '+ item.address);
+            htmlAddresses.push('&nbsp&nbsp&nbsp -> '+ item.point.x +','+ item.point.y);
+        }
 
+        infoWindow.setContent([
+                '<div style="padding:10px;min-width:200px;line-height:150%;">',
+                '<h4 style="margin-top:5px;">검색 좌표 : '+ response.result.userquery +'</h4><br />',
+                htmlAddresses.join('<br />'),
+                '</div>'
+            ].join('\n'));
 
-            
-            </td>
+        infoWindow.open(map, latlng);
+    });
+}
 
-            
+// result by latlng coordinate
+function searchAddressToCoordinate(address) {
+    naver.maps.Service.geocode({
+        address: address
+    }, function(status, response) {
+        if (status === naver.maps.Service.Status.ERROR) {
+            return alert('Something Wrong!');
+        }
 
-            
+        var item = response.result.items[0],
+            addrType = item.isRoadAddress ? '[도로명 주소]' : '[지번 주소]',
+            point = new naver.maps.Point(item.point.x, item.point.y);
 
-            <td class="description last"><p>UI 컨트롤 옵션</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
+        infoWindow.setContent([
+                '<div style="padding:10px;min-width:200px;line-height:150%;">',
+                '<h4 style="margin-top:5px;">검색 주소 : '+ response.result.userquery +'</h4><br />',
+                addrType +' '+ item.address +'<br />',
+                '&nbsp&nbsp&nbsp -> '+ point.x +','+ point.y,
+                '</div>'
+            ].join('\n'));
 
 
-    
-    <h5>Requires</h5>
-    <ul>
-        <li><a href="module-panorama.html">module:panorama</a></li>
-    </ul>
-    
+        map.setCenter(point);
+        infoWindow.open(map, point);
+    });
+}
 
-    
+map.addListener('click', function(e) {
+    searchCoordinateToAddress(e.coord);
+});
 
-    
+$('#address').on('keydown', function(e) {
+    var keyCode = e.which;
 
-    
-
-    
-
-    
-
-    
-        <h5>Example</h5>
-        
-    <pre class="sunlight-highlight-javascript">var pano = new naver.maps.Panorama(&quot;pano&quot;, {
-    position: new naver.maps.LatLng(37.3599605, 127.1058814),
-    aroundControl: true,
-    aroundControlOptions: {
-        position: naver.maps.Position.TOP_RIGHT
+    if (keyCode === 13) { // Enter Key
+        searchAddressToCoordinate($('#address').val());
     }
-});</pre>
+});
 
+$('#submit').on('click', function(e) {
+    e.preventDefault();
 
-    
-</dd>
+    searchAddressToCoordinate($('#address').val());
+});
 
-    
-    </div>
+searchAddressToCoordinate('정자동 178-1');
+</script>
 
-    
-        <h3 class="subsection-title">Extends</h3>
 
-        
-
-
-    <ul>
-        <li><a href="naver.maps.CustomControl.html">naver.maps.CustomControl</a></li>
-    </ul>
-
-
-    
-
-    
-        <h3 class="subsection-title">Requires</h3>
-
-        <ul>
-            <li><a href="module-panorama.html">module:panorama</a></li>
-        </ul>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        <dl>
-            
-<dt>
-    <h4 class="name" id="getElement"><span class="type-signature"></span>getElement()</h4>
-
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>UI 컨트롤의 HTML 노드를 반환합니다.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="naver.maps.CustomControl.html#getElement">naver.maps.CustomControl#getElement</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns</h5>
-    
-            <!-- 
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="global.html#HTMLElement">HTMLElement</a></span>
-
-
-
-    </dd>
-</dl>
-
-
- -->
-<!-- ! -->
-
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Type</th>
-        
-
-        
-    </tr>
-    </thead>
-
-    <tbody>
-        <tr>
-            
-                <td class="name"><code>
-<span class="param-type">
-    
-    <!-- <a href="global.html#HTMLElement">HTMLElement</a> -->
-    <a href="global.html#HTMLElement">HTMLElement</a>
-    </span>
-
-
-</code></td>
-            
-
-            
-        </tr>
-    </tbody>
-</table>
-
-        
-
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="getMap"><span class="type-signature"></span>getMap()</h4>
-
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>현재 UI 컨트롤이 추가된 지도 객체를 반환합니다.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="naver.maps.CustomControl.html#getMap">naver.maps.CustomControl#getMap</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns</h5>
-    
-            <!-- 
-<div class="param-desc">
-    <p>지도 객체</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="naver.maps.Map.html">naver.maps.Map</a></span>
-|
-
-<span class="param-type"><a href="global.html#null">null</a></span>
-
-
-
-    </dd>
-</dl>
-
-
- -->
-<!-- ! -->
-
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Type</th>
-        
-
-        
-        <th class="last">Description</th>
-        
-    </tr>
-    </thead>
-
-    <tbody>
-        <tr>
-            
-                <td class="name"><code>
-<span class="param-type">
-    
-    <!-- <a href="naver.maps.Map.html">naver.maps.Map</a> -->
-    <a href="naver.maps.Map.html">naver.maps.Map</a>
-    </span>
-|
-
-<span class="param-type">
-    
-    <!-- <a href="global.html#null">null</a> -->
-    <a href="global.html#null">null</a>
-    </span>
-
-
-</code></td>
-            
-
-            
-                <td class="description last"><p>지도 객체</p></td>
-
-            
-        </tr>
-    </tbody>
-</table>
-
-        
-
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="getOptions"><span class="type-signature"></span>getOptions(<span class="optional">key</span>)</h4>
-
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>UI 컨트롤의 모든 옵션 또는 특정 옵션의 값을 반환합니다.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Argument</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>key</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">
-    
-    <!-- <a href="global.html#string">string</a> -->
-    <a href="global.html#string">string</a>
-    </span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>가져올 옵션의 이름</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="naver.maps.CustomControl.html#getOptions">naver.maps.CustomControl#getOptions</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns</h5>
-    
-            <!-- 
-<div class="param-desc">
-    <p>모든 옵션 또는 특정 <code>key</code>에 해당되는 옵션의 값</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="global.html#any">any</a></span>
-
-
-
-    </dd>
-</dl>
-
-
- -->
-<!-- ! -->
-
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Type</th>
-        
-
-        
-        <th class="last">Description</th>
-        
-    </tr>
-    </thead>
-
-    <tbody>
-        <tr>
-            
-                <td class="name"><code>
-<span class="param-type">
-    
-    <!-- <a href="global.html#any">any</a> -->
-    <a href="global.html#any">any</a>
-    </span>
-
-
-</code></td>
-            
-
-            
-                <td class="description last"><p>모든 옵션 또는 특정 <code>key</code>에 해당되는 옵션의 값</p></td>
-
-            
-        </tr>
-    </tbody>
-</table>
-
-        
-
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="html"><span class="type-signature"></span>html(<span class="optional">html</span>)</h4>
-
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>지정한 HTML 마크업을 컨테이너 <code>&lt;div&gt;</code> 요소 내에 렌더링하거나, UI 컨트롤의 컨테이너 <code>&lt;div&gt;</code> 요소를 반환합니다.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-        <th>Argument</th>
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>html</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">
-    
-    <!-- <a href="global.html#string">string</a> -->
-    <a href="global.html#string">string</a>
-    </span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>UI 컨트롤 마크업</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="naver.maps.CustomControl.html#html">naver.maps.CustomControl#html</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns</h5>
-    
-            <!-- 
-<div class="param-desc">
-    <p>UI 컨트롤 마크업</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="global.html#string">string</a></span>
-|
-
-<span class="param-type">undefined</span>
-
-
-
-    </dd>
-</dl>
-
-
- -->
-<!-- ! -->
-
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Type</th>
-        
-
-        
-        <th class="last">Description</th>
-        
-    </tr>
-    </thead>
-
-    <tbody>
-        <tr>
-            
-                <td class="name"><code>
-<span class="param-type">
-    
-    <!-- <a href="global.html#string">string</a> -->
-    <a href="global.html#string">string</a>
-    </span>
-|
-
-<span class="param-type">
-    
-    <!-- undefined -->
-    undefined
-    </span>
-
-
-</code></td>
-            
-
-            
-                <td class="description last"><p>UI 컨트롤 마크업</p></td>
-
-            
-        </tr>
-    </tbody>
-</table>
-
-        
-
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="setMap"><span class="type-signature"></span>setMap(map)</h4>
-
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>UI 컨트롤을 지도에 추가합니다. 인수로 <a href="global.html#null">null</a>을 전달하면 UI 컨트롤을 지도에서 제거합니다.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>map</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">
-    
-    <!-- <a href="naver.maps.Map.html">naver.maps.Map</a> -->
-    <a href="naver.maps.Map.html">naver.maps.Map</a>
-    </span>
-|
-
-<span class="param-type">
-    
-    <!-- <a href="global.html#null">null</a> -->
-    <a href="global.html#null">null</a>
-    </span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>지도 객체</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="naver.maps.CustomControl.html#setMap">naver.maps.CustomControl#setMap</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="setOptions"><span class="type-signature"></span>setOptions(newOptions)</h4>
-
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>UI 컨트롤의 옵션을 변경하거나 새로 설정합니다.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>newOptions</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">
-    
-    <!-- <a href="naver.maps.CustomControl.html#~ControlOptions">naver.maps.CustomControl~ControlOptions</a> -->
-    <a href="naver.maps.CustomControl.html#~ControlOptions">ControlOptions</a>
-    </span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>UI 컨트롤 옵션</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="naver.maps.CustomControl.html#setOptions">naver.maps.CustomControl#setOptions</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="setPosition"><span class="type-signature"></span>setPosition(position)</h4>
-
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>UI 컨트롤의 위치를 설정합니다.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>position</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">
-    
-    <!-- <a href="naver.maps.html#.Position">naver.maps.Position</a> -->
-    <a href="naver.maps.html#.Position">naver.maps.Position</a>
-    </span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>컨트롤 위치</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-	<dt class="inherited-from method-doc-label method-doc-details-label">Inherited From</dt>
-	<dd class="inherited-from">
-		<ul class="dummy">
-			<li>
-				<a href="naver.maps.CustomControl.html#setPosition">naver.maps.CustomControl#setPosition</a>
-			</li>
-		</ul>
-	</dd>
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        </dl>
-    
-
-    
-        <h3 class="subsection-title">Type Definitions</h3>
-
-        <dl>
-                
-<hr>
-<dt class="name" id="~AroundControlOptions">
-    <h4>AroundControlOptions</h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        <p><code>AroundControlOptions</code> 객체는 거리뷰/항공뷰 전환 컨트롤의 위치를 정의하는 옵션을 나타냅니다.</p>
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type"><a href="global.html#object">object</a></span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-    <h5 class="subsection-title">Properties</h5>
-
-    <dl>
-
-<table class="props table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>position</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">
-    
-    <!-- <a href="naver.maps.html#.Position">naver.maps.Position</a> -->
-    <a href="naver.maps.html#.Position">naver.maps.Position</a>
-    </span>
-
-
-
-            
-            </td>
-
-            
-
-            
-                <td class="default">
-                
-                    TOP_RIGHT
-                
-                </td>
-            
-
-            <td class="description last"><p>거리뷰/항공뷰 전환 컨트롤을 배치할 위치입니다.</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-</dl>
-
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-        <h5>Example</h5>
-        
-    <pre class="sunlight-highlight-javascript">var pano = new naver.maps.Panorama(&quot;pano&quot;, {
-    position: new naver.maps.LatLng(37.3599605, 127.1058814),
-    size: new naver.maps.Size(800, 600),
-    pov: {
-        pan: -135,
-        tilt: 29,
-        fov: 100
-    },
-    aroundControl: true,
-    aroundControlOptions: {
-        position: naver.maps.Position.TOP_RIGHT
-    }
-});</pre>
-
-
-    
-</dd>
-
-            </dl>
-    
 
     
 </article>
 
 </section>
 
-
-
-
 		</div>
 	</div>
 
 	<div class="clearfix"></div>
 
-	
-		<div class="col-md-3">
-			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
-		</div>
 	
 
 </div>
