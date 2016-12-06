@@ -28,18 +28,24 @@
 </div>
 
 <script id="code">
-var pano = new naver.maps.Panorama("pano", {
-    position: new naver.maps.LatLng(37.3599605, 127.1058814),
-    pov: {
-        pan: -135,
-        tilt: 29,
-        fov: 100
-    },
-    aroundControl: true,
-    aroundControlOptions: {
-        position: naver.maps.Position.TOP_RIGHT
-    }
-});
+var pano = null;
+
+function initPanorama() {
+    pano = new naver.maps.Panorama("pano", {
+        position: new naver.maps.LatLng(37.3599605, 127.1058814),
+        pov: {
+            pan: -135,
+            tilt: 29,
+            fov: 100
+        },
+        aroundControl: true,
+        aroundControlOptions: {
+            position: naver.maps.Position.TOP_RIGHT
+        }
+    });
+}
+
+naver.maps.onJSContentLoaded = initPanorama;
 
 $("#around").on("click", function(e) {
     e.preventDefault();

@@ -657,52 +657,58 @@
 </div>
 
 <script id="code">
-var pano = new naver.maps.Panorama("pano", {
-    position: new naver.maps.LatLng(37.3599605, 127.1058814),
-    pov: {
-        pan: -135,
-        tilt: 29,
-        fov: 100
-    },
-    minScale: 0, // default: 0
-    maxScale: 5  // default: 10
-});
+var pano = null;
 
-naver.maps.Event.addListener(pano, "init", function() {
-    pano.setVisible(true);
-});
+function initPanorama() {
+    pano = new naver.maps.Panorama("pano", {
+        position: new naver.maps.LatLng(37.3599605, 127.1058814),
+        pov: {
+            pan: -135,
+            tilt: 29,
+            fov: 100
+        },
+        minScale: 0, // default: 0
+        maxScale: 5  // default: 10
+    });
 
-naver.maps.Event.addListener(pano, "pano_status", function(status) {
-    $("#pano_status_cell").text(status + ", " + pano.getPanoId());
+    naver.maps.Event.addListener(pano, "init", function() {
+        pano.setVisible(true);
+    });
 
-    if (status != naver.maps.PanoramaStatus.OK) {
-        alert("error");
-    }
-});
+    naver.maps.Event.addListener(pano, "pano_status", function(status) {
+        $("#pano_status_cell").text(status + ", " + pano.getPanoId());
 
-naver.maps.Event.addListener(pano, "pano_changed", function() {
-    $("#id_cell").text(pano.getPanoId());
-    $("#position_cell").text(pano.getPosition());
-    $("#title_cell").text(pano.getLocation().title);
-    $("#address_cell").text(pano.getLocation().address);
-    $("#photodate_cell").text(pano.getLocation().photodate);
-});
+        if (status != naver.maps.PanoramaStatus.OK) {
+            alert("error");
+        }
+    });
 
-naver.maps.Event.addListener(pano, "pov_changed", function() {
-    $("#pan_cell").text(pano.getPov().pan);
-    $("#tilt_cell").text(pano.getPov().tilt);
-    $("#fov_cell").text(pano.getPov().fov);
+    naver.maps.Event.addListener(pano, "pano_changed", function() {
+        $("#id_cell").text(pano.getPanoId());
+        $("#position_cell").text(pano.getPosition());
+        $("#title_cell").text(pano.getLocation().title);
+        $("#address_cell").text(pano.getLocation().address);
+        $("#photodate_cell").text(pano.getLocation().photodate);
+    });
 
-    $("#zoom_cell").text(pano.getZoom());
-    $("#min_zoom_cell").text(pano.getMinZoom());
-    $("#max_zoom_cell").text(pano.getMaxZoom());
+    naver.maps.Event.addListener(pano, "pov_changed", function() {
+        $("#pan_cell").text(pano.getPov().pan);
+        $("#tilt_cell").text(pano.getPov().tilt);
+        $("#fov_cell").text(pano.getPov().fov);
 
-    $("#scale_cell").text(pano.getScale());
-    $("#min_scale_cell").text(pano.getMinScale());
-    $("#max_scale_cell").text(pano.getMaxScale());
+        $("#zoom_cell").text(pano.getZoom());
+        $("#min_zoom_cell").text(pano.getMinZoom());
+        $("#max_zoom_cell").text(pano.getMaxZoom());
 
-    updateZoomState();
-});
+        $("#scale_cell").text(pano.getScale());
+        $("#min_scale_cell").text(pano.getMinScale());
+        $("#max_scale_cell").text(pano.getMaxScale());
+
+        updateZoomState();
+    });
+}
+
+naver.maps.onJSContentLoaded = initPanorama;
 
 function updateZoomState() {
     var disabledZoomIn = (pano.getScale() === pano.getMaxScale());

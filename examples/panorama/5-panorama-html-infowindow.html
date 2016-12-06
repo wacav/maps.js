@@ -23,14 +23,28 @@
 </div>
 
 <script id="code">
-var pano = new naver.maps.Panorama("pano", {
-    position: new naver.maps.LatLng(37.3599605, 127.1058814),
-    pov: {
-        pan: -135,
-        tilt: 29,
-        fov: 100
-    }
-});
+var pano = null;
+
+function initPanorama() {
+    pano = new naver.maps.Panorama("pano", {
+        position: new naver.maps.LatLng(37.3599605, 127.1058814),
+        pov: {
+            pan: -135,
+            tilt: 29,
+            fov: 100
+        }
+    });
+
+    naver.maps.Event.addListener(pano, "init", function() {
+        marker.setMap(pano);
+
+        var proj = pano.getProjection();
+        var lookAtPov = proj.fromCoordToPov(marker.getPosition());
+        if (lookAtPov) {
+            pano.setPov(lookAtPov);
+        }
+    });
+}
 
 var marker = new naver.maps.Marker({
     position: new naver.maps.LatLng(37.3689782, 127.1059397)
@@ -67,15 +81,7 @@ naver.maps.Event.addListener(marker, "click", function(e) {
     }
 });
 
-naver.maps.Event.addListener(pano, "init", function() {
-    marker.setMap(pano);
-
-    var proj = pano.getProjection();
-    var lookAtPov = proj.fromCoordToPov(marker.getPosition());
-    if (lookAtPov) {
-        pano.setPov(lookAtPov);
-    }
-});
+naver.maps.onJSContentLoaded = initPanorama;
 </script>
 
 </body>

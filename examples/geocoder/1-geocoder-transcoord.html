@@ -24,39 +24,44 @@
 
 <script id="code">
 var map = new naver.maps.Map("map", {
-    center: new naver.maps.LatLng(37.5666103, 126.9783882),
-    zoom: 11
-});
+        center: new naver.maps.LatLng(37.5666103, 126.9783882),
+        zoom: 11
+    }),
+    infoWindow = null;
 
-var latlng = map.getCenter();
-var utmk = naver.maps.TransCoord.fromLatLngToUTMK(latlng); // 위/경도 -> UTMK
-var tm128 = naver.maps.TransCoord.fromUTMKToTM128(utmk);   // UTMK -> TM128
-var naverCoord = naver.maps.TransCoord.fromTM128ToNaver(tm128); // TM128 -> NAVER
+function initGeocoder() {
+    var latlng = map.getCenter();
+    var utmk = naver.maps.TransCoord.fromLatLngToUTMK(latlng); // 위/경도 -> UTMK
+    var tm128 = naver.maps.TransCoord.fromUTMKToTM128(utmk);   // UTMK -> TM128
+    var naverCoord = naver.maps.TransCoord.fromTM128ToNaver(tm128); // TM128 -> NAVER
 
-var infoWindow = new naver.maps.InfoWindow({
-    content: ''
-});
+    infoWindow = new naver.maps.InfoWindow({
+        content: ''
+    });
 
-map.addListener('click', function(e) {
-    var latlng = e.coord,
-        utmk = naver.maps.TransCoord.fromLatLngToUTMK(latlng),
-        tm128 = naver.maps.TransCoord.fromUTMKToTM128(utmk),
-        naverCoord = naver.maps.TransCoord.fromTM128ToNaver(tm128);
+    map.addListener('click', function(e) {
+        var latlng = e.coord,
+            utmk = naver.maps.TransCoord.fromLatLngToUTMK(latlng),
+            tm128 = naver.maps.TransCoord.fromUTMKToTM128(utmk),
+            naverCoord = naver.maps.TransCoord.fromTM128ToNaver(tm128);
 
-    utmk.x = parseFloat(utmk.x.toFixed(1));
-    utmk.y = parseFloat(utmk.y.toFixed(1));
+        utmk.x = parseFloat(utmk.x.toFixed(1));
+        utmk.y = parseFloat(utmk.y.toFixed(1));
 
-    infoWindow.setContent([
-        '<div style="padding:10px;width:300px;font-size:14px;line-height:20px;">',
-        '<strong>LatLng</strong> : '+ latlng +'<br />',
-        '<strong>UTMK</strong> : '+ utmk +'<br />',
-        '<strong>TM128</strong> : '+ tm128 +'<br />',
-        '<strong>NAVER</strong> : '+ naverCoord +'<br />',
-        '</div>'
-    ].join(''));
+        infoWindow.setContent([
+            '<div style="padding:10px;width:300px;font-size:14px;line-height:20px;">',
+            '<strong>LatLng</strong> : '+ latlng +'<br />',
+            '<strong>UTMK</strong> : '+ utmk +'<br />',
+            '<strong>TM128</strong> : '+ tm128 +'<br />',
+            '<strong>NAVER</strong> : '+ naverCoord +'<br />',
+            '</div>'
+        ].join(''));
 
-    infoWindow.open(map, latlng);
-});
+        infoWindow.open(map, latlng);
+    });
+}
+
+naver.maps.onJSContentLoaded = initGeocoder;
 </script>
 
 </body>

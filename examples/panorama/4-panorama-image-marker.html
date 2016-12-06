@@ -31,16 +31,29 @@
 </div>
 
 <script id="code">
-var pano = new naver.maps.Panorama("pano", {
-    position: new naver.maps.LatLng(37.3599605, 127.1058814),
-    pov: {
-        pan: -135,
-        tilt: 29,
-        fov: 100
-    }
-});
+var HOME_PATH = window.HOME_PATH || '.',
+    pano = null;
 
-var HOME_PATH = window.HOME_PATH || '.';
+function initPanorama() {
+    pano = new naver.maps.Panorama("pano", {
+        position: new naver.maps.LatLng(37.3599605, 127.1058814),
+        pov: {
+            pan: -135,
+            tilt: 29,
+            fov: 100
+        }
+    });
+
+    naver.maps.Event.addListener(pano, "init", function() {
+        marker.setMap(pano);
+
+        var proj = pano.getProjection();
+        var lookAtPov = proj.fromCoordToPov(marker.getPosition());
+        if (lookAtPov) {
+            pano.setPov(lookAtPov);
+        }
+    });
+}
 
 var marker = new naver.maps.Marker({
     position: new naver.maps.LatLng(37.359484, 127.105333),
@@ -57,16 +70,6 @@ naver.maps.Event.addListener(marker, "click", function(e) {
     alert("marker clicked");
 });
 
-naver.maps.Event.addListener(pano, "init", function() {
-    marker.setMap(pano);
-
-    var proj = pano.getProjection();
-    var lookAtPov = proj.fromCoordToPov(marker.getPosition());
-    if (lookAtPov) {
-        pano.setPov(lookAtPov);
-    }
-});
-
 $("#marker").on("click", function(e) {
     e.preventDefault();
 
@@ -80,6 +83,8 @@ $("#marker").on("click", function(e) {
         el.val("Marker 제거").addClass("control-on");
     }
 });
+
+naver.maps.onJSContentLoaded = initPanorama;
 </script>
 
 </body>

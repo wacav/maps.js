@@ -590,49 +590,56 @@
 </div>
 
 <script id="code">
-var map = new naver.maps.Map("map", {
-    center: new naver.maps.Point(309944, 552085),
-    zoom: 8,
-    mapTypes: new naver.maps.MapTypeRegistry({
-        'normal': naver.maps.NaverMapTypeOption.getNormalMap({
-            projection: naver.maps.TM128Coord
-        }),
-        'terrain': naver.maps.NaverMapTypeOption.getTerrainMap({
-            projection: naver.maps.TM128Coord
-        }),
-        'satellite': naver.maps.NaverMapTypeOption.getSatelliteMap({
-            projection: naver.maps.TM128Coord
-        }),
-        'hybrid': naver.maps.NaverMapTypeOption.getHybridMap({
-            projection: naver.maps.TM128Coord
-        })
-    }),
-    mapTypeControl: true
-});
+var map = null,
+    infoWindow = null;
 
-var infoWindow = new naver.maps.InfoWindow({
-    content: [
-        '<div style="padding:10px;width:300px;font-size:14px;line-height:20px;">',
-        '<strong>Coord</strong> : '+ map.getCenter() +'<br />',
-        '</div>'
-    ].join('')
-});
+function initMap() {
+    map = new naver.maps.Map("map", {
+        center: new naver.maps.Point(309944, 552085),
+        zoom: 8,
+        mapTypes: new naver.maps.MapTypeRegistry({
+            'normal': naver.maps.NaverMapTypeOption.getNormalMap({
+                projection: naver.maps.TM128Coord
+            }),
+            'terrain': naver.maps.NaverMapTypeOption.getTerrainMap({
+                projection: naver.maps.TM128Coord
+            }),
+            'satellite': naver.maps.NaverMapTypeOption.getSatelliteMap({
+                projection: naver.maps.TM128Coord
+            }),
+            'hybrid': naver.maps.NaverMapTypeOption.getHybridMap({
+                projection: naver.maps.TM128Coord
+            })
+        }),
+        mapTypeControl: true
+    });
 
-function updateInfoWindow(coord) {
-    infoWindow.setContent([
-        '<div style="padding:10px;width:300px;font-size:14px;line-height:20px;">',
-        '<strong>Coord</strong> : '+ coord +'<br />',
-        '</div>'
-    ].join(''));
+    infoWindow = new naver.maps.InfoWindow({
+        content: [
+            '<div style="padding:10px;width:300px;font-size:14px;line-height:20px;">',
+            '<strong>Coord</strong> : '+ map.getCenter() +'<br />',
+            '</div>'
+        ].join('')
+    });
 
-    infoWindow.open(map, coord);
+    function updateInfoWindow(coord) {
+        infoWindow.setContent([
+            '<div style="padding:10px;width:300px;font-size:14px;line-height:20px;">',
+            '<strong>Coord</strong> : '+ coord +'<br />',
+            '</div>'
+        ].join(''));
+
+        infoWindow.open(map, coord);
+    }
+
+    updateInfoWindow(map.getCenter());
+
+    map.addListener('idle', function(e) {
+        updateInfoWindow(map.getCenter());
+    });
 }
 
-updateInfoWindow(map.getCenter());
-
-map.addListener('idle', function(e) {
-    updateInfoWindow(map.getCenter());
-});
+naver.maps.onJSContentLoaded = initMap;
 </script>
 
 

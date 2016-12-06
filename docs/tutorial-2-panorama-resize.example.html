@@ -621,14 +621,18 @@
     });
 </script>
 <script id="code">
-var pano = new naver.maps.Panorama("pano", {
-    position: new naver.maps.LatLng(37.3599605, 127.1058814),
-    pov: {
-        pan: -135,
-        tilt: 29,
-        fov: 100
-    }
-});
+var pano = null;
+
+naver.maps.onJSContentLoaded = function() {
+    pano = new naver.maps.Panorama("pano", {
+        position: new naver.maps.LatLng(37.3599605, 127.1058814),
+        pov: {
+            pan: -135,
+            tilt: 29,
+            fov: 100
+        }
+    });
+};
 
 var originMarker = $("#origin-marker");
 

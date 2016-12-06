@@ -601,29 +601,32 @@ var mapOptions = {
     zoom: 4
 };
 
-var map = new naver.maps.Map("map", mapOptions);
+var map = new naver.maps.Map("map", mapOptions),
+    flightSpot = null;
 
-var flightSpot = new naver.maps.FlightSpot();
+naver.maps.onJSContentLoaded = function() {
+    flightSpot = new naver.maps.FlightSpot();
 
-flightSpot.setMap(map); // 항공뷰 아이콘을 지도에 표시합니다.
+    flightSpot.setMap(map); // 항공뷰 아이콘을 지도에 표시합니다.
 
-naver.maps.Event.addListener(flightSpot, "poi_clicked", function(panoId) {
-    alert(panoId); //클러스터링 마커가 아닌 일반 마커에서 클릭해야 동작합니다.
-});
+    naver.maps.Event.addListener(flightSpot, "poi_clicked", function(panoId) {
+        alert(panoId); //클러스터링 마커가 아닌 일반 마커에서 클릭해야 동작합니다.
+    });
 
-$("#fligtspot").on("click", function(e) {
-    e.preventDefault();
+    $("#fligtspot").on("click", function(e) {
+        e.preventDefault();
 
-    var el = $(this);
+        var el = $(this);
 
-    if (flightSpot.getMap()) {
-        flightSpot.setMap(null);
-        el.val("FlightSpot 추가").removeClass("control-on");
-    } else {
-        flightSpot.setMap(map);
-        el.val("FlightSpot 제거").addClass("control-on");
-    }
-});
+        if (flightSpot.getMap()) {
+            flightSpot.setMap(null);
+            el.val("FlightSpot 추가").removeClass("control-on");
+        } else {
+            flightSpot.setMap(map);
+            el.val("FlightSpot 제거").addClass("control-on");
+        }
+    });
+};
 </script>
 
 
