@@ -41,27 +41,27 @@ var map = new naver.maps.Map("map", {
     markers = [];
 
 var htmlMarker1 = {
-        content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(../../docs/img/cluster-marker-1.png);background-size:contain;"></div>',
+        content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url('+ HOME_PATH +'/img/cluster-marker-1.png);background-size:contain;"></div>',
         size: N.Size(40, 40),
         anchor: N.Point(20, 20)
     },
     htmlMarker2 = {
-        content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(../../docs/img/cluster-marker-2.png);background-size:contain;"></div>',
+        content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url('+ HOME_PATH +'/img/cluster-marker-2.png);background-size:contain;"></div>',
         size: N.Size(40, 40),
         anchor: N.Point(20, 20)
     },
     htmlMarker3 = {
-        content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(../../docs/img/cluster-marker-3.png);background-size:contain;"></div>',
+        content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url('+ HOME_PATH +'/img/cluster-marker-3.png);background-size:contain;"></div>',
         size: N.Size(40, 40),
         anchor: N.Point(20, 20)
     },
     htmlMarker4 = {
-        content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(../../docs/img/cluster-marker-4.png);background-size:contain;"></div>',
+        content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url('+ HOME_PATH +'/img/cluster-marker-4.png);background-size:contain;"></div>',
         size: N.Size(40, 40),
         anchor: N.Point(20, 20)
     },
     htmlMarker5 = {
-        content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(../../docs/img/cluster-marker-5.png);background-size:contain;"></div>',
+        content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url('+ HOME_PATH +'/img/cluster-marker-5.png);background-size:contain;"></div>',
         size: N.Size(40, 40),
         anchor: N.Point(20, 20)
     };
@@ -95,7 +95,25 @@ function onLoad() {
     });
 }
 </script>
-<script type="text/javascript" src="../../docs/data/accidentdeath.js"></script>
-<script type="text/javascript" src="../../docs/js/MarkerClustering.js" onload="onLoad()"></script>
+
+<script type="text/javascript">
+    var loaded = 0;
+    var list = [
+        '/data/accidentdeath.js',
+        '/js/MarkerClustering.js'
+    ];
+
+    $(list).each(function(i, itm) {
+        $.getScript(HOME_PATH + itm, function() {
+            loaded++;
+            if (loaded == 2) {
+                onLoad();
+            }
+        });
+    })
+
+</script>
+<!-- <script type="text/javascript" src="../../docs/data/accidentdeath.js"></script> -->
+<!-- <script type="text/javascript" src="../../docs/js/MarkerClustering.js" onload="onLoad()"></script> -->
 </body>
 </html>
