@@ -7,7 +7,10 @@ NAVER 지도 JavaScript API v3는 JavaScript 형태로 제공되는 NAVER 지도
 
 NAVER 지도 API v3는 지도의 기능을 확장하는 서브모듈 시스템을 지원합니다. 현재 제공하는 서브모듈의 목록은 다음과 같습니다.
 
-* [panorama](https://navermaps.github.io/maps.js/docs/module-panorama.html) -  거리뷰/항공뷰를 사용할 수 있는 `panorama` 모듈입니다.
+* [panorama](https://navermaps.github.io/maps.js/docs/tutorial-Panorama.html) -  거리뷰/항공뷰를 사용할 수 있습니다.
+* [geocoder](https://navermaps.github.io/maps.js/docs/module-geocoder.html) - 좌표 체계간 변환 메서드와 특정 좌표계를 지원하는 투영객체들을 제공합니다.  
+* [visualization](https://navermaps.github.io/maps.js/docs/tutorial-Visualization.html) - 열지도,점지도 등 시각화 모듈입니다.
+* [drawing](https://navermaps.github.io/maps.js/docs/module-drawing.html) - 지도에 도형이나 마커를 그릴 수 있는 그래픽 인터페이스 모듈입니다.
 
 ## 브라우저 지원
 
