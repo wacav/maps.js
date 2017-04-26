@@ -190,6 +190,8 @@
                 
                         <li><a style="padding-left:20px;" href="naver.maps.visualization.HeatMap.html">naver.maps.visualization.HeatMap</a></li>
                 
+                        <li><a style="padding-left:20px;" href="naver.maps.visualization.WeightedLocation.html">naver.maps.visualization.WeightedLocation</a></li>
+                
                         
                     </ul>
                 </li>
@@ -546,6 +548,10 @@
                 
                         <li><a style="padding-left:20px;" href="tutorial-3-visualization-spectrum.example.html">열지도 스펙트럼 변경하기</a></li>
                 
+                        <li><a style="padding-left:20px;" href="tutorial-4-visualization-heatmap-w.example.html">열지도 가중치 사용하기</a></li>
+                
+                        <li><a style="padding-left:20px;" href="tutorial-5-visualization-dotmap-w.example.html">점지도 가중치 사용하기</a></li>
+                
                         <li><a href="tutorial-digest.example.html#Geocoder" class="_cat" style="padding-left:10px" >Geocoder</a></li>
                 
                         <li><a style="padding-left:20px;" href="tutorial-1-geocoder-transcoord.example.html">좌표계 변환하기</a></li>
@@ -686,7 +692,7 @@ var map = new naver.maps.Map('map', mapOptions);
 </ul>
 <p>앞서 NAVER 지도 API v3를 비동기 방식으로 로드한 경우 아래와 같이 콜백함수 내에서 지도를 생성합니다.</p>
 <pre class="prettyprint source lang-html"><code>&lt;body>
-    &lt;script type=&quot;text/javascript&quot; src=&quot;https://openapi.map.naver.com/openapi/v3/maps.js?clientId=YOUR_CLIENT_ID&callback=iniMap&quot;>&lt;/script>
+    &lt;script type=&quot;text/javascript&quot; src=&quot;https://openapi.map.naver.com/openapi/v3/maps.js?clientId=YOUR_CLIENT_ID&callback=initMap&quot;>&lt;/script>
     &lt;script type=&quot;text/javascript&quot;>
         var map = null;
 

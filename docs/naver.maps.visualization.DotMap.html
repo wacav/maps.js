@@ -190,6 +190,8 @@
                 
                         <li><a style="padding-left:20px;" href="naver.maps.visualization.HeatMap.html">naver.maps.visualization.HeatMap</a></li>
                 
+                        <li><a style="padding-left:20px;" href="naver.maps.visualization.WeightedLocation.html">naver.maps.visualization.WeightedLocation</a></li>
+                
                         
                     </ul>
                 </li>
@@ -546,6 +548,10 @@
                 
                         <li><a style="padding-left:20px;" href="tutorial-3-visualization-spectrum.example.html">열지도 스펙트럼 변경하기</a></li>
                 
+                        <li><a style="padding-left:20px;" href="tutorial-4-visualization-heatmap-w.example.html">열지도 가중치 사용하기</a></li>
+                
+                        <li><a style="padding-left:20px;" href="tutorial-5-visualization-dotmap-w.example.html">점지도 가중치 사용하기</a></li>
+                
                         <li><a href="tutorial-digest.example.html#Geocoder" class="_cat" style="padding-left:10px" >Geocoder</a></li>
                 
                         <li><a style="padding-left:20px;" href="tutorial-1-geocoder-transcoord.example.html">좌표계 변환하기</a></li>
@@ -637,7 +643,7 @@
         DotMap
         </h2>
         
-            <div class="class-description" itemprop="description"><p><code>DotMap</code> 클래스는 점지도를 정의합니다.</p></div>
+            <div class="class-description" itemprop="description"><p><code>DotMap</code> 클래스는 점지도를 정의합니다. 가중치가 있는 지점 목록을 이용할 때는 가중치를 <code>1 ~ {반지름}</code>로 정규화하고, 해당 값을 점지도를 표현하는 점의 반지름으로 사용합니다. 가중치가 없는 지점 목록을 이용할 때는 반지름을 점지도를 표현하는 점의 반지름으로 사용합니다.</p></div>
         
     
 </header>
@@ -1681,6 +1687,137 @@
         
             
 <dt>
+    <h4 class="name" id="setOptions"><span class="type-signature"></span>setOptions(options)</h4>
+
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>점지도의 옵션을 변경하거나 새로 설정합니다.</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">
+    
+    <!-- <a href="naver.maps.visualization.DotMap.html#~DotMapOptions">naver.maps.visualization.DotMap~DotMapOptions</a> -->
+    <a href="naver.maps.visualization.DotMap.html#~DotMapOptions">DotMapOptions</a>
+    </span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>점지도 옵션</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<dt>
     <h4 class="name" id="setOptions"><span class="type-signature"></span>setOptions(key, value)</h4>
 
     
@@ -1774,137 +1911,6 @@
             
 
             <td class="description last"><p>점지도 옵션 값</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<dt>
-    <h4 class="name" id="setOptions"><span class="type-signature"></span>setOptions(options)</h4>
-
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>점지도의 옵션을 변경하거나 새로 설정합니다.</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>options</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">
-    
-    <!-- <a href="naver.maps.visualization.DotMap.html#~DotMapOptions">naver.maps.visualization.DotMap~DotMapOptions</a> -->
-    <a href="naver.maps.visualization.DotMap.html#~DotMapOptions">DotMapOptions</a>
-    </span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>점지도 옵션</p></td>
         </tr>
 
     
@@ -2092,6 +2098,13 @@
     <!-- Array.&lt;<a href="global.html#PointArrayLiteral">PointArrayLiteral</a>> -->
     Array.&lt;<a href="global.html#PointArrayLiteral">PointArrayLiteral</a>>
     </span>
+|
+
+<span class="param-type">
+    
+    <!-- Array.&lt;<a href="naver.maps.visualization.WeightedLocation.html">naver.maps.visualization.WeightedLocation</a>> -->
+    Array.&lt;<a href="naver.maps.visualization.WeightedLocation.html">naver.maps.visualization.WeightedLocation</a>>
+    </span>
 
 
 
@@ -2149,12 +2162,12 @@
             
                 <td class="default">
                 
-                    0.2
+                    0.5
                 
                 </td>
             
 
-            <td class="description last"><p>점지도의 투명도입니다. <code>0 ~ 1</code>의 값을 입력합니다.</p></td>
+            <td class="description last"><p>점지도의 불투명도입니다. <code>0 ~ 1</code>의 값을 입력합니다.</p></td>
         </tr>
 
     
@@ -2196,7 +2209,7 @@
                 </td>
             
 
-            <td class="description last"><p>점지도를 표현하는 점의 반지름입니다. 가중치가 있는 데이터를 표현하는 점지도는 이 값을 제일 높은 가중치를 가진 데이터의 반지름으로 사용합니다.</p></td>
+            <td class="description last"><p>점지도를 표현하는 점의 반지름입니다. 단위는 픽셀입니다.</p></td>
         </tr>
 
     
@@ -2233,7 +2246,7 @@
             
                 <td class="default">
                 
-                    5
+                    1
                 
                 </td>
             
