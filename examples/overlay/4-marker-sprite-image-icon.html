@@ -59,13 +59,7 @@ for (var i=0, ii=latlngs.length; i<ii; i++) {
         marker = new naver.maps.Marker({
             position: latlngs[i],
             map: map,
-            icon: icon,
-            shadow: {
-                url: HOME_PATH +'/img/example/shadow-pin_default.png',
-                size: new naver.maps.Size(40, 35),
-                origin: new naver.maps.Point(0, 0),
-                anchor: new naver.maps.Point(11, 35)
-            }
+            icon: icon
         });
 
     marker.set('seq', i);

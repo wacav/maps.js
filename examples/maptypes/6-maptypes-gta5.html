@@ -33,11 +33,10 @@ GTA5MapTypeOption.prototype = {
     name: '',
     type: '',
     projection: naver.maps.EPSG3857,
-    minZoom: 1,
+    minZoom: 0,
     maxZoom: 6,
     tileSize: new N.Size(256, 256),
     TRANSPARENT_URL: './img/example/dot.gif',
-    tileRanges: [1, 2, 4, 8, 16, 32],
 
     getName: function() {
         return this.name;
@@ -62,8 +61,8 @@ var gtaNormal = new naver.maps.ImageMapType(new GTA5MapTypeOption({ name:"Atlas"
     gtaUV = new naver.maps.ImageMapType(new GTA5MapTypeOption({ name:"UV Invert", type: "Tiles_UV"}));
 
 var map = new naver.maps.Map('map', {
-    center: new naver.maps.LatLng(47.90161299396793, -55.107421875),
-    zoom: 2,
+    center: {lat:74.6904143,lng:-123.2226562},
+    zoom: 3,
     mapTypes: new naver.maps.MapTypeRegistry({
         'atlas': gtaNormal,
         'satellite': gtaSatellite,

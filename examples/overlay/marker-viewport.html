@@ -119,13 +119,13 @@ function updateMarkers(map, markers) {
 
 function showMarker(map, marker) {
 
-    if (marker.setMap()) return;
+    if (marker.getMap()) return;
     marker.setMap(map);
 }
 
 function hideMarker(map, marker) {
 
-    if (!marker.setMap()) return;
+    if (!marker.getMap()) return;
     marker.setMap(null);
 }
 </script>
