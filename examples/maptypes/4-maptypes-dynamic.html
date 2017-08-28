@@ -106,16 +106,31 @@ $('#radio-wrap input').on('click', function(e) {
     stopNotify = false;
 });
 
+var idleListener = null;
+
 naver.maps.Event.addListener(map, 'mapTypeId_changed', function(mapTypeId) {
     if (stopNotify) return;
 
-    var curZoom = map.getZoom();
+    naver.maps.Event.removeListener(idleListener);
+
+    var curZoom = map.getZoom(),
+        toZoom = curZoom;
 
     if (mapTypeId === 'osm') {
-        map.setZoom(curZoom + 5);
-    } else if (mapTypeId === "naver") {
-        map.setZoom(curZoom - 5);
+        toZoom += 5;
+    } else if (mapTypeId === 'naver') {
+        toZoom -= 5;
     }
+
+    idleListener = naver.maps.Event.once(map, 'idle', function() {
+        naver.maps.Event.removeListener(idleListener);
+
+        var zoom = map.getZoom();
+
+        if (zoom !== toZoom) {
+            map.setZoom(toZoom);
+        }
+    });
 });
 </script>
 
