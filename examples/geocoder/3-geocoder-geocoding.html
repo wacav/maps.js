@@ -69,7 +69,6 @@ function searchCoordinateToAddress(latlng) {
             addrType = item.isRoadAddress ? '[도로명 주소]' : '[지번 주소]';
 
             htmlAddresses.push((i+1) +'. '+ addrType +' '+ item.address);
-            htmlAddresses.push('&nbsp&nbsp&nbsp -> '+ item.point.x +','+ item.point.y);
         }
 
         infoWindow.setContent([
